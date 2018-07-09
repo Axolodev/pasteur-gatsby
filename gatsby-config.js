@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Laboratorios Pasteur',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

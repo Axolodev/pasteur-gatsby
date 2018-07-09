@@ -15,17 +15,28 @@ const Layout = ({ children, data }) => (
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
+          { name: 'description', content: 'Siempre accesibles, siempre cerca de ti. Contáctanos ahora.' },
+          { name: 'keywords', content: 'Laboratorios, Pasteur' },
         ]}
         link={[
           {
             rel:"stylesheet",
-            href:"https://use.fontawesome.com/releases/v5.1.0/css/all.css", 
-            integrity:"sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt", 
+            href:"https://use.fontawesome.com/releases/v5.1.0/css/all.css",
+            integrity:"sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt",
             crossorigin:"anonymous"
+          },
+          {
+            rel:"shortcut icon",
+            href:"/favicon.ico?v=2",
+            type:"image/x-icon"
+          },
+          {
+            rel:"icon",
+            href:"/favicon.ico?v=2",
+            type:"image/x-icon"
           }
         ]}
+        
       />
       <Navbar />
       {children()}
