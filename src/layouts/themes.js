@@ -7,7 +7,7 @@ export const globalTheme = {
     greyBlue: '#8b98bd',
   },
   fontFamily: {
-    main: 'sans-serif',
+    main: 'akzidenzGrotesk',
     secondary: '',
   },
 };

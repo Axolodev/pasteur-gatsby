@@ -100,7 +100,7 @@ const Intro = () => (
     </Compromise>
     <Healthcare>
       <SectionHeader>Cuidándonos siempre juntos</SectionHeader>
-      <SectionSubheader>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eum sint placeat libero quae maiores vitae labore natus. Possimus, sit ipsam. Omnis vel nulla voluptate consectetur perspiciatis optio, mollitia aliquid?</SectionSubheader>
+      <SectionSubheader>Nuestro filosofía de trabajo es mantenernos en constante cambio, adaptando nuestros servicios<br/> al estilo de vida de nuestros diferentes pacientes.</SectionSubheader>
       <ValueProposition>
         <ValueCard>
           <ValueCardIcon src={tecnologiasSVG}/>

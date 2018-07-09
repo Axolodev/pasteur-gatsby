@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ContactData from '../components/PageContact/ContactData';
 import Delivery from '../components/PageContact/Delivery';
 import Map from '../components/PageContact/Map';
+import Locations from './../components/PageContact/Locations';
 
 const Placeholder = styled.div`
   height: 200px;
@@ -11,14 +12,15 @@ const Placeholder = styled.div`
 
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 50% auto;
-  grid-template-columns: 20% auto;
+  grid-template-rows: 18rem auto;
+  grid-template-columns: 25% auto;
   grid-template-areas:
       "Contacto Mapa"
-      "Domicilio Mapa";
-  grid-column-gap: 50px;
+      "Domicilio Sucursales";
+  grid-column-gap: 5rem;
+  grid-row-gap: 2rem;
   box-sizing: border-box;
-  padding: 0px 4.5em 50px;
+  padding: 3rem 4.5em;
 `;
 
 const Contact = styled(ContactData)`
@@ -27,12 +29,17 @@ const Contact = styled(ContactData)`
 
 const Del = styled(Delivery)`
   grid-area: Domicilio;
-  align-self: end;
 `;
 
 const MapaCont = styled(Map)`
   grid-area: Mapa;
 `;
+
+const SucursalesContainer = styled(Locations)`
+  grid-area: Sucursales;
+  margin: 0 2rem;
+`;
+
 
 const PageContact = () => (
   <div>
@@ -41,6 +48,7 @@ const PageContact = () => (
       <Contact />
       <Del />
       <MapaCont />
+      <SucursalesContainer />
     </Container>
   </div>
 );

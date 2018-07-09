@@ -82,6 +82,7 @@ const Website = styled.div`
 
 const ContactInfo = () => (
   <Layout>
+    
     <Motto>
       <p>Laboratorios Pasteur, 21 años cuidandonos juntos.</p>
       <p>Brindando certeza accesible en análisis clínicos.</p>
@@ -99,7 +100,7 @@ const ContactInfo = () => (
     </DirectMessage>
     <FAQ>
       <h1>PREGUNTAS FRECUENTES</h1>
-      <Questions />
+      {false && <Questions />}
     </FAQ>
     <Rights>
       <p>Derechos Reservados a Laboratorios Pasteur 2018</p>

@@ -11,6 +11,7 @@ const I = styled.i`
 `;
 
 const NavLayout = styled.nav`
+  z-index: 1;
   display: grid;
   grid-template: repeat(4, minmax(2.5vh, 47px)) / 3fr 1fr 2fr;
   grid-template-areas: 
