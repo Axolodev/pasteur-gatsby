@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { observer } from 'mobx-react';
 
 const Sucursales = [
-  { id: 1, nombre: 'Suc. Valle Soleado', direccion: "Ave. Israel Cavzos No. 342, Col. Valle Soleado, Guadalupe, N.L.", latitud: 25.645376, longitud: -100.191684 },
-  { id: 2, nombre: 'Suc. Coahuila', direccion: "Ave. Coahuila No. 406, Col. Coahuila, Juárez, N.L.", latitud: 25.648376, longitud: -100.199705 },
+  { id: 1, nombre: 'Suc. Valle Soleado', direccion: "Ave. Israel Cavazos No. 342, Col. Valle Soleado, Guadalupe, N.L.", latitud: 25.645376, longitud: -100.191684 },
+  { id: 2, nombre: 'Suc. Coahuila', direccion: "Ave. Coahuila No. 406, Col. Coahuila, Juárez, N.L.", latitud: 25.6629138, longitud: -100.1436527 },
   { id: 3, nombre: 'Suc. Santa Mónica', direccion: "Ave. Acueducto No. 809, Col. Santa Isabel, Juárez, N.L.", latitud: 25.655559, longitud: -100.199995 },
   { id: 4, nombre: 'Suc. Zertuche', direccion: "Ave. Eloy Cavazos, No. 5729-A, Col. Zertuche, Guadalupe, N.L.", latitud: 25.673432, longitud: -100.192929 },
   { id: 5, nombre: 'Suc. Las Torres', direccion: "Ave. Calle Camino al Mirador, Col. del Paseo Residencial, Monterrey, N.L.", latitud: 25.673432, longitud: -100.192929 },

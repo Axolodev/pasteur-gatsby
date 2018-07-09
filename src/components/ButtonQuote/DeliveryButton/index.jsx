@@ -61,11 +61,11 @@ const Div = styled.div`
 const DeliveryButton = () => (
   <ButtonCont>
     <Div width={60}>
-      <Title>Lorem ipsum dolor sit</Title>
-      <Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</Text>
+      <Title>Servicio a domicilio</Title>
+      <Text>Siempre accesibles, siempre cerca de ti. Contáctanos ahora.</Text>
     </Div>
     <Div width={35}>
-      <Button to="/">Servicio a Domicilio</Button>
+      <Button to="/contacto">Ver localizaciones</Button>
     </Div>
   </ButtonCont>
 );
