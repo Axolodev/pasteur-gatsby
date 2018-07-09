@@ -1,8 +1,9 @@
 backend:
-  name: github
-  repo: robruizr/pasteur-gatsby
+  name: git-gateway
+  branch: master
 
-media_folder: static/assets
+media_folder: static/assets/uploads
+public_folder: /assets/uploads
 
 collections:
   - name: bg_images
