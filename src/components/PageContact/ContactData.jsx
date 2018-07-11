@@ -51,7 +51,7 @@ const ContactData = (props) => (
     </div>
     <div>
       <Subtitulo> E-mail </Subtitulo>
-      <Email> pasteur.laboratorio@yahoo.com.mx </Email>
+      <Email>labpasteur@gmail.com</Email>
     </div>
 
   </Contacto>
