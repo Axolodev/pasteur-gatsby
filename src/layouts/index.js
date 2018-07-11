@@ -36,11 +36,26 @@ const Layout = ({ children, data }) => (
             type:"image/x-icon"
           }
         ]}
-        
+        script={[
+          {
+            src:"https://identity.netlify.com/v1/netlify-identity-widget.js"
+          }
+        ]}
       />
       <Navbar />
       {children()}
       <Footer />
+      {() => {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          })
+        }
+      }}
     </div>
   </ThemeProvider>
 )
