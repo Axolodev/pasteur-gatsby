@@ -5,6 +5,7 @@ import ButtonQuote from '../components/ButtonQuote';
 import Public from '../components/PageHome/Public';
 import Intro from './../components/PageHome/Intro';
 import Slideshow from './../components/Slideshow';
+import quoteBackground from '../components/PageHome/assets/quote-bg.jpg';
 
 const text = 'Comprometidos por el bienestar de tu familia.';
 
@@ -22,7 +23,7 @@ const SlideshowLayout = styled.div`
 `;
 
 const Background = styled.div`
-  background: #606163;
+
 `;
 
 const BgSlide = styled.div.attrs({
@@ -36,33 +37,49 @@ const BgSlide = styled.div.attrs({
   justify-content: flex-end;
 `;
 
-const PageHome = () => (
-  <Layout>
-    <SlideshowLayout>
-      <Slideshow 
-        items={[
-          {
-            key: 0,
-            background:'darkred',
-          }, 
-          {
-            key: 1,
-            background:'darkblue',
-          },
-          {
-            key: 2,
-            background:'green',
-          },
-        ]}
-        defaultElementRender={(data) => <BgSlide {...data}/>}
-      />
-    </SlideshowLayout>
-    <Intro />
-    <Background>
-      <Public />
-      <ButtonQuote quote={text} />
-    </Background>
-  </Layout>
-);
+const PageHome = ({data}) => {
+  const slides = data.slides.edges.map(({node}) => {
+    const {frontmatter: {img, title}} = node;
+    
+    return {
+      key: title,
+      background: `url('${img}') center`, 
+    };
+  });
+
+  return (
+    <Layout>
+      <SlideshowLayout>
+        <Slideshow 
+          items={slides}
+          defaultElementRender={(data) => <BgSlide {...data}/>}
+        />
+      </SlideshowLayout>
+      <Intro />
+      <Background>
+        <Public />
+        <ButtonQuote
+          quote={text}
+          background={`url(${quoteBackground}) center`}
+        />
+      </Background>
+    </Layout>
+  );
+}
 
 export default PageHome;
+
+export const pageQuery = graphql`
+  query GetSlidesData {
+    slides: allMarkdownRemark(filter: {frontmatter: {type: {eq: "slide"}}}) {
+      edges {
+        node {
+          frontmatter {
+            img
+            title
+          }
+        }
+      }
+    }
+  }
+`;

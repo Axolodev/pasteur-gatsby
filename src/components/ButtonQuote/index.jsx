@@ -6,6 +6,23 @@ import DeliveryButton from './DeliveryButton';
 
 const Container = styled.div`
   width: 100%;
+  position: relative;  
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  ::before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: ${({background}) => background};
+    z-index: -1;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
 `;
 
 const Separator = styled.div`
@@ -17,7 +34,7 @@ const Separator = styled.div`
 `;
 
 const ButtonQuote = (props) => (
-  <Container>
+  <Container background={props.background}>
     <Separator>
       <DeliveryButton />
     </Separator>

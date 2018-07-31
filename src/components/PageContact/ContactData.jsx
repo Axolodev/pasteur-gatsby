@@ -38,10 +38,9 @@ const Email = Texto.extend`
 `
 
 const ContactData = (props) => (
-  <Contacto className={props.className}>
-    <Titulo> Contacto </Titulo>
+  <Contacto>
+    <Titulo> Sucursal Matriz </Titulo>
     <div>
-      <Subtitulo> Sucursal Matriz </Subtitulo>
       <Texto> Av. Chapultepec 1922-A Col. Buenos Aires. Monterrey, Nuevo León </Texto>
     </div>
     <div>

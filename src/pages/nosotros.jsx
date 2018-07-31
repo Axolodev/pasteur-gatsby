@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
 import ButtonQuote from '../components/ButtonQuote';
+import quoteBackground from '../components/PageAbout/assets/appointment.jpg';
 
 const Layout = styled.div`
   display: flex;
@@ -42,17 +43,15 @@ const Content = styled(ReactMarkdown)`
   }
 `;
 
-const QuoteButton = styled(ButtonQuote)`
-  align-self: flex-end;
-  width: 100%;
-  background: red;
-`;
 
 const PageAbout = () => (
   <Layout>
     <Placeholder />
     <Content source={input} />
-    <QuoteButton quote={text} />
+    <ButtonQuote
+      background={`url(${quoteBackground}) center`}
+      quote={text}
+    />
   </Layout>
 );
 

@@ -109,7 +109,7 @@ const Intro = () => (
   <Section>
     <Compromise>
       <TextBlock to="/nosotros" backgroundcolor="#2c4486">Compromiso con<br/>nuestros pacientes</TextBlock>
-      <TextBlock to="#" backgroundcolor="#1995c9"></TextBlock>
+      <TextBlock to="#" backgroundcolor="#1995c9">Consulta nuestra<br/>lista de servicios</TextBlock>
       <ExternalLink target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login" backgroundcolor="#2c4486">Consulta de<br/>resultados</ExternalLink>
     </Compromise>
     <Healthcare>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import background from './assets/appointment.jpg';
 import general from './icons/general.svg';
 import mujer from './icons/mujer.svg';
 import hombre from './icons/hombre.svg';
@@ -13,6 +14,19 @@ const Section = styled.section`
   width: 100%;
   min-height: 760px;
   height: 100vh;
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+
+  ::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('${background}') center;
+    z-index: -1;
+  }
 `;
 
 const Layout = styled.div`
@@ -101,7 +115,7 @@ const Public = () => (
   <Section>
     <Layout>
       {profiles.map(profile => (
-        <GridItem>
+        <GridItem key={profile.name}>
           <GridItemLogo><Img src={profile.img} alt={profile.alt}/></GridItemLogo>
           <GridItemTitle>{profile.name}</GridItemTitle>
           <GridItemDescription>{profile.description}</GridItemDescription>
