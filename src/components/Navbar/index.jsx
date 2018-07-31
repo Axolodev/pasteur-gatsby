@@ -32,7 +32,7 @@ const ContactSection = styled.div`
   align-items: center;
   justify-content: flex-end;
   height: 100%;
-  box-shadow: inset 0px -2px 0px -1px white, inset 0px 2px 0px -1px white;
+  box-shadow: inset 0px -2px 0px -1px white;
 `;
 
 const styledSection = styled.div`
@@ -107,7 +107,7 @@ const Img = styled.img`
 const Navbar = () => (
   <NavLayout>
     <ContactSection>
-      <PhoneSection>(81) 1234 56789</PhoneSection>
+      <PhoneSection> (81) 8354 8491</PhoneSection>
       <SocialsSection>
         <div>labpasteur@gmail.com</div>
         <div>

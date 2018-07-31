@@ -34,6 +34,20 @@ const TextBlock = styled(NavLink)`
   text-align: center;
 `;
 
+const ExternalLink = styled.a`
+  color: white;
+  background: ${props => props.backgroundcolor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-grow: 1;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: ${props => props.theme.fontFamily.main};
+  text-align: center;
+`;
+
 const Healthcare = styled.div`
   display: flex;
   flex-direction: column;
@@ -96,10 +110,10 @@ const Intro = () => (
     <Compromise>
       <TextBlock to="/nosotros" backgroundcolor="#2c4486">Compromiso con<br/>nuestros pacientes</TextBlock>
       <TextBlock to="#" backgroundcolor="#1995c9"></TextBlock>
-      <TextBlock to="/" backgroundcolor="#2c4486">Consulta de<br/>resultados</TextBlock>
+      <ExternalLink target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login" backgroundcolor="#2c4486">Consulta de<br/>resultados</ExternalLink>
     </Compromise>
     <Healthcare>
-      <SectionHeader>Cuidándonos siempre juntos</SectionHeader>
+      <SectionHeader>siempre juntos, cuidándonos</SectionHeader>
       <SectionSubheader>Nuestro filosofía de trabajo es mantenernos en constante cambio, adaptando nuestros servicios<br/> al estilo de vida de nuestros diferentes pacientes.</SectionSubheader>
       <ValueProposition>
         <ValueCard>
