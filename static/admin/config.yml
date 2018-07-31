@@ -23,7 +23,7 @@ collections:
       - { name: title, label: "Nombre", required: true }
       - { name: address, label: "Dirección", widget: text, required: false }
       - { name: type, label: 'Hidden Type', widget: hidden, default: "sucursales" }
-      - { name: phone, label: "Teléfono" }
+      - { name: phone, label: "Teléfono", required: false }
       - { name: main, label: "Matriz", widget: boolean, required: false }
       - name: "coords"
         label: "Coordenadas"
