@@ -21,10 +21,10 @@ collections:
     create: true
     fields:
       - { name: title, label: "Nombre", required: true }
-      - { name: address, label: "Dirección", widget: text }
+      - { name: address, label: "Dirección", widget: text, required: false }
       - { name: type, label: 'Hidden Type', widget: hidden, default: "sucursales" }
       - { name: phone, label: "Teléfono" }
-      - { name: main, label: "Matriz", widget: boolean }
+      - { name: main, label: "Matriz", widget: boolean, required: false }
       - name: "coords"
         label: "Coordenadas"
         widget: "object"
