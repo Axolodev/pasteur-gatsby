@@ -41,16 +41,56 @@ const SucursalesContainer = styled(Locations)`
 `;
 
 
-const PageContact = () => (
-  <div>
-    <Placeholder />
-    <Container>
-      <Contact />
-      <Del />
-      <MapaCont />
-      <SucursalesContainer />
-    </Container>
-  </div>
-);
+const PageContact = ({data}) => {
+  const { matrixLocation } = data;
+  const allLocationsData = data.allLocations.edges.map(({node: {frontmatter}}) => ({...frontmatter}));
+  const locationCoords = allLocationsData.map(({coords}, index) => ({
+    id: index,
+    latitude: parseFloat(coords.latitude),
+    longitude: parseFloat(coords.longitude)
+  }));
+
+  return (
+    <div>
+      <Placeholder />
+      <Container>
+        <Contact matrixLocation={matrixLocation}/>
+        <Del />
+        <MapaCont locations={locationCoords}/>
+        <SucursalesContainer locations={allLocationsData}/>
+      </Container>
+    </div>
+  );
+}
 
 export default PageContact;
+
+export const pageQuery = graphql`
+  query CoolQuery {
+    matrixLocation: markdownRemark(frontmatter: {main: {eq: true}}) {
+      frontmatter {
+        title
+        address
+        phone
+      }
+    }
+  
+    allLocations: allMarkdownRemark(filter: 
+      {frontmatter: {type: {eq: "sucursales"}}}
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            address
+            phone
+            coords {
+              latitude
+              longitude
+            }
+          }
+        }
+      }
+    }
+  }
+`;

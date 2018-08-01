@@ -1,0 +1,642 @@
+﻿[
+	{
+		 "name":"ACIDO FOLICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"ACIDO URICO SERICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ALBUMINA EN SUERO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"AMILASA EN SUERO",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ANTIDOPING (3)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ANTIDOPING (5)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"AC. ANTI HELICOBACTER PYLORI",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ANTIESTREPTOLISINAS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"AG. PROSTATICO ESPECIFICO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"3 DIAS"
+	},
+	{
+		 "name":"AG. PROSTATICO LIBRE",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"BACILOSCOPIA 1 MUESTRA",
+		 "instructions":"SIN ASEO BUCAL",
+		 "deliveryTime":"1 DIA"
+	},
+	{
+		 "name":"BACILOSCOPIA 3 MUESTRAS",
+		 "instructions":"SIN ASEO BUCAL",
+		 "deliveryTime":"1 DIA"
+	},
+	{
+		 "name":"BILIRRUBINAS",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"BIOMETRIA HEMATICA/PLAQUETAS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CALCIO EN SUERO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CALCIO EN ORINA DE 24 HORAS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CITOLOGIA FECAL",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CITOLOGIA VAGINAL",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CITOQUIMICO DE LIQUIDOS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CLORO SERICO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"COLESTEROL TOTAL",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"COOMBS INDIRECTO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"COPROCULTIVO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"COPROLOGICO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"COPRO 1 MUESTRA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"COPRO 3 MUESTRAS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CREATINFOSFOQUINASA-MB",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CREATINFOSFOQUINASA TOTAL",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CREATININA EN ORINA DE 24 HRS.",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CREATININA EN SUERO",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CUENTA BLANCA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CUENTA ROJA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"CULTIVO AMIGDALINO",
+		 "instructions":"AYUNAS SIN ASEO BUCAL",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CULTIVO DE ESPECTORACION",
+		 "instructions":"AYUNAS SIN ASEO BUCAL",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CULTIVO DE CUALQUIER SITIO",
+		 "instructions":"AYUNAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CULTIVO NASAL",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CULTIVO OTICO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CULTIVO URETRAL",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"CULTIVO VAGINAL",
+		 "instructions":"NO MENSTRUANDO",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"DEPURACION DE CREATININA EN ORINA DE 24 HRS.",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"DESHIDROGENASA LACTICA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"DIFENILHIDANYTOINA (EPAMIN)",
+		 "instructions":"AYUO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"DIGOXINA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"EOSINOF. ABSOLUTOS EN SANGRE",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"EOSINOFILOS EN MOCO FARINGEO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"EOSINOFILOS EN MOCO NASAL",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ESPERMOGRAMA",
+		 "instructions":"3 DIAS DE ABSTINENCIA SEXUAL",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ESPERMOCULTIVO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"ESTRADIOL SERICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"ESTROGENOS",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"EXAMEN GENERAL DE ORINA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"FACTOR ARTRITIS REUMATOIDE",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"FOSFATASA ACIDA TOTAL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"FOSFATASA ALKALINA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"FOSFATASA ACIDA FRACCION PROSTATICA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"FOSFORO EN SUERO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"FROTIS DE SANGRE PERIFERICA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"1 DIA"
+	},
+	{
+		 "name":"FTA ANTICUERPOS ANTI TREPONEMA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"GAMMA GLUTAMIL TRASPEPTIDASA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"GLUCOSA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GLUCOSA CURVA DE TOLERANCIA A LA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GLUCOSA POST- PRANDIAL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GLUCOSA POST-CARGA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GCH EN SUERO CUALITATIVA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GCH EN SUERO CUANTITATIVA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GCH EN ORINA CUALITATIVA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GCH EN ORINA CUANTITATIVA EN ORINA DE 24 HORAS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GRUPO SANGUINEO Y RH",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"GUAYACO EN HECES",
+		 "instructions":"EVITAR POR 3 DIAS CARNE ROJA",
+		 "deliveryTime":"BETABEL"
+	},
+	{
+		 "name":"HEMOGLOBINA GLICOSILADA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"HIV- ANTICUERPOS ANTI",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"HORMONA ESTIMULADORA DE LA TIROIDES (TSH)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"HORMONA ESTIMULADORA DE LA TIROIDES NEONATAL",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"HORMONA FOLICULO ESTILUMANTE",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"HORMONA LUTEINIZANTE",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"I.A.P.C.",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"INDICE HOMA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS HABILES"
+	},
+	{
+		 "name":"INMUNOGLOBULKINA E (IgE)",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"K O H DIRECTO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"LITIO SERICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"N. I. H. (OXIUROS)",
+		 "instructions":"TOMA MATUTINA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL BIOQUIMICO 18 ELEMENTOS",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL BIOQUIMICO DE 24 ELEMENTOS",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL CARDIACO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL DE FUNCIONAMIENTO HEPATICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL DE LIPIDOS",
+		 "instructions":"AYUNO 12 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL GINECOLOGICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"PERFIL HORMONAL FEMENINO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"PERFIL PRENATAL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL PRENATAL CON QS/C.",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERF. PRENATAL CON HIV",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERF. PRENATAL CON QS/COL Y HIV",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL REUMATICO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PERFIL TIROIDEO CON TSH",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"PERFIL TIROIDEO SIN TSH",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"PLAQUETAS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"POTASIO EN SUERO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PROGESTERONA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"PROLACTINA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"PROTEINA C REACTIVA",
+		 "instructions":"AYUNO 4 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PROTEINAS TOTALES EN SUERO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PROTEINA TOTALES ORINA 24 HRS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PRENUPCIALES (POR PAREJA)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PRUEBA DE EMBARAZO EN ORINA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"PRUEBA DE EMBARAZO EN SANGRE",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"QUIMICA SANGUINEA CON COLESTEROL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"QUIMICA SANGUINEA SIN COLESTEROL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"REACCION FEBRILES",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"REACCION LUETICA (V.D.R.L.)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"RETICULOCITOS",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"ROTAVIRUS EN HECES",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"SEDIMENTACION GLOBULAR",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"SERIE ROJA",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"SODIO SERICO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TEGRETOL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"TESTOSTERONA",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"2 DIAS"
+	},
+	{
+		 "name":"TIEMPO DE COAGULACION",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TIEMPO DE PROTROMBINA (TP)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TIEMPO DE TROMBOPLASTINA PARCIAL (TPT)",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TIEMPO DE SANGRADO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TRANSAMINASA G.O.",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TRANSAMINASA G.P.",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TRIGLICERIDOS",
+		 "instructions":"AYUNO 12 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TSH",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"TSH NEONATAL",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"UREA EN SUERO",
+		 "instructions":"AYUNO 8 HORAS",
+		 "deliveryTime":"MISMO DIA"
+	},
+	{
+		 "name":"UROCULTIVO",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"4 DIAS"
+	},
+	{
+		 "name":"V.D.R.L.",
+		 "instructions":"NINGUNA",
+		 "deliveryTime":"MISMO DIA"
+	}
+]

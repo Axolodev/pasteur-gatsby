@@ -5,21 +5,22 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-family: ${props => props.theme.fontFamily.main};
 `;
 
 const Title = styled.p`
+  font-family: ${props => props.theme.fontFamily.main};
   text-transform: uppercase;
   line-height: 2.5rem;
-  font-family: ${props => props.theme.fontFamily.main};
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
   color: #989898;
 `;
 
 const SucursalName = styled.p`
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #989898;
 `;
 
@@ -35,21 +36,19 @@ const Sucursal = styled.div`
   padding-top: 30px;
 
   &:not(:nth-child(4n + 0)) {
-      padding-right: 10px;
+    padding-right: 10px;
   }
 `;
 
-const Locations = ({data}) => {
-  const Sucursales = [];
-
+const Locations = ({locations}) => {
   return (
     <div>
       <Title> Sucursales </Title>
       <Container>
-        {Sucursales.map(sucursal => (
-          <Sucursal key={sucursal.id}>
-            <SucursalName> {sucursal.nombre} </SucursalName>
-            <Direccion> {sucursal.direccion} </Direccion>
+        {locations.map((sucursal, index) => (
+          <Sucursal key={index}>
+            <SucursalName> {sucursal.title} </SucursalName>
+            <Direccion> {sucursal.address} </Direccion>
           </Sucursal>
         ))}
       </Container>

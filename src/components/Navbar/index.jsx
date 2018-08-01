@@ -21,6 +21,7 @@ const NavLayout = styled.nav`
     ". . .";  
   align-items: center;
   justify-content: space-evenly;
+  font-family: ${props => props.theme.fontFamily.main};
   position: absolute;
   width: 100%;
   background: linear-gradient(180deg, rgba(44,68,134,1) 0%, rgba(5,6,255,0) 100%, rgba(0,212,255,1) 100%);
@@ -120,6 +121,7 @@ const Navbar = () => (
     <LinksSection>
       <Link to="/">Inicio</Link>
       <Link to="/nosotros">Sobre Nosotros</Link>
+      <Link to="/servicios">Servicios</Link>
       <Link to="/contacto">Contacto</Link>
     </LinksSection>
   </NavLayout>

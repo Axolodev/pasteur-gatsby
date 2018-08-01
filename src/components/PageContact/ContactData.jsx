@@ -4,14 +4,16 @@ import styled from 'styled-components';
 const Contacto = styled.div`
   display: flex;
   flex-direction: column;
+  font-weight: 200;
   width: 100%;
+  font-family: ${({theme}) => theme.fontFamily.main};
 `;
 
 const Titulo = styled.p`
   text-transform: uppercase;
   font-family: ${props => props.theme.fontFamily.main};
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
   color: #989898;
   padding-bottom: 10px;
@@ -19,13 +21,13 @@ const Titulo = styled.p`
 
 const Subtitulo = styled.p`
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #989898;
   line-height: 2rem;
 `;
 
 const Texto = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #989898;
 `;
 
@@ -35,7 +37,7 @@ const TextoExt = Texto.extend`
 
 const Email = Texto.extend`
   font-size: calc(1.2rem - 0.1vw);
-`
+`;
 
 const ContactData = (props) => (
   <Contacto>
