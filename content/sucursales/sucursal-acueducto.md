@@ -1,5 +1,6 @@
 ---
-title: 'Sucursal Acueducto'
+title: Sucursal Acueducto
+address: 'Av. Acueducto #809 Fracc. Santa Monica, Juarez, N.L'
 type: sucursales
 coords:
   latitude: '25.6249444'
