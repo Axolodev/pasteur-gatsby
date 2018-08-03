@@ -14,7 +14,7 @@ const PageHeader = styled.h1`
   font-family: inherit;
   font-size: 2.2rem;
   font-weight: 700;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 `;
 
 const TableLayout = styled.div`
@@ -26,7 +26,7 @@ const TableLayout = styled.div`
 const TableRow = styled.div.attrs({
   style: ({style}) => ({...style})  
 })`
-  background: ${({index}) => index % 2 === 0 ? 'white' : '#f0f0f0'};
+  background: ${({index}) => index % 2 === 0 ? 'white' : '#e7e7e7'};
   width: 100%;
   text-transform: lowercase;
   display: flex;
@@ -59,9 +59,18 @@ const HeaderRowData = TableRow.extend`
   padding: 0.5em;
 `;
 
+const FilterInput = styled.input`
+  width: 100%;
+  border-radius: 0.2em;
+  border: 1px solid #777;
+  box-sizing: border-box;
+  padding: 0.5em;
+  margin-bottom: 1em;
+`;
+
 class Servicios extends React.Component {
-  componentDidMount() {
-    this.displayedServices = services;
+  state = {
+    displayedServices: services
   }
 
   rowRenderer = ({
@@ -75,17 +84,36 @@ class Servicios extends React.Component {
         style={style}
         index={index}
       >
-        <NameRowData>{services[index].name}</NameRowData>
-        <InstructionsRowData>{services[index].instructions}</InstructionsRowData>
-        <DeliveryTimeRowData>{services[index].deliveryTime}</DeliveryTimeRowData>
+        <NameRowData>{this.state.displayedServices[index].name}</NameRowData>
+        <InstructionsRowData>{this.state.displayedServices[index].instructions}</InstructionsRowData>
+        <DeliveryTimeRowData>{this.state.displayedServices[index].deliveryTime}</DeliveryTimeRowData>
       </TableRow>
     )
+  }
+  
+  handleInput = ({target}) => {
+    const {value} = target;
+
+    
+    this.setState(() => {
+      const filteredServices = services.filter(service => service.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 )
+
+      return {
+        displayedServices: filteredServices
+      };
+    });
   }
   
   render() {
     return (
       <Layout>
         <PageHeader>Nuestros Servicios</PageHeader>
+        <FilterInput 
+          type="text"
+          placeholder="Filtrar servicios"
+          onChange={this.handleInput}
+          name="filterInput"
+        />
         <TableLayout>
           <HeaderRowData>
             <NameRowData>Nombre de servicio</NameRowData>
@@ -97,7 +125,7 @@ class Servicios extends React.Component {
               <List 
                 width={width}
                 height={height}
-                rowCount={services.length}
+                rowCount={this.state.displayedServices.length}
                 rowHeight={30}
                 rowRenderer={this.rowRenderer}
               />
