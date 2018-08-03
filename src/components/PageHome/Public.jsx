@@ -10,12 +10,15 @@ import deportista from './icons/deportista.svg';
 import organizacion from './icons/organizacion.svg';
 
 const Section = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   width: 100%;
-  min-height: 760px;
-  height: 100vh;
   position: relative;
   background: rgba(0, 0, 0, 0.7);
+  padding: 8.5em 3.5em;
+  box-sizing: border-box;
 
   ::before {
     content: "";
@@ -31,13 +34,18 @@ const Section = styled.section`
 
 const Layout = styled.div`
   display: grid;
-  width: calc(100% - 7em);
-  height: calc(100% - 17em);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   grid-auto-flow: row;
-  margin: 8.5em 3.5em;
   grid-gap: 1px;
   overflow: hidden;
+
+  @media (max-width: 50em) {
+    height: auto;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  }
 `;
 
 const GridItem = styled.div`
@@ -50,6 +58,7 @@ const GridItem = styled.div`
   outline-style: solid;
   outline-color: ${props => props.theme.color.white};
   outline-width: 1px; 
+  padding: 1em 0;
 `;
 
 const GridItemLogo = styled.div`
@@ -61,18 +70,18 @@ const GridItemTitle = styled.div`
   font-family: ${props => props.theme.fontFamily.main};
   margin: 1rem 0;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.3em;
   font-weight: bold;
 `;
 
 const GridItemDescription = styled.div`
   font-style: italic;
   font-family: "Times New Roman";
-  font-size: 0.9rem;
+  font-size: 1em;
+  line-height: 1.3em;
   width: 80%;
   font-family: ${props => props.theme.fontFamily.secondary};
   color: ${props => props.theme.color.white};
-  line-height: 1.1rem;
 `;
 
 const Img = styled.img`

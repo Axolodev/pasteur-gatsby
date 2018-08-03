@@ -23,6 +23,10 @@ const Container = styled.div`
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
+
+  @media (max-width: 50em) {
+    display: none;
+  }
 `;
 
 const Separator = styled.div`

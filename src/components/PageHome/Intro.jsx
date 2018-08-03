@@ -34,6 +34,12 @@ const TextBlock = styled(NavLink)`
   text-align: center;
 `;
 
+const HideableTextBlock = TextBlock.extend`
+  @media (max-width: 50em) {
+    display: none;
+  }
+`;
+
 const ExternalLink = styled.a`
   color: white;
   background: ${props => props.backgroundcolor};
@@ -108,7 +114,7 @@ const ValueCardSupportText = styled.div`
 const Intro = () => (
   <Section>
     <Compromise>
-      <TextBlock to="/nosotros" backgroundcolor="#2c4486">Compromiso con<br/>nuestros pacientes</TextBlock>
+      <HideableTextBlock to="/nosotros" backgroundcolor="#2c4486">Compromiso con<br/>nuestros pacientes</HideableTextBlock>
       <TextBlock to="#" backgroundcolor="#1995c9">Consulta nuestra<br/>lista de servicios</TextBlock>
       <ExternalLink target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login" backgroundcolor="#2c4486">Consulta de<br/>resultados</ExternalLink>
     </Compromise>

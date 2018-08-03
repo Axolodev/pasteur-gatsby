@@ -38,7 +38,7 @@ const ContactMethods = () => (
     <hr/>
     <ContactItem>
       <p>Email</p>
-      <p>labpasteur@gmail.com</p>
+      <p>contacto@pasteur.mx</p>
     </ContactItem>
     <hr/>
     <ContactItem>

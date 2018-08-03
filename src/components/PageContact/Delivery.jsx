@@ -24,6 +24,7 @@ const Text = styled.p`
   line-height: 1.2em;
   color: #989898;
   padding-bottom: 30px;
+  font-family: ${({theme}) => theme.fontFamily.main};
 `;
 
 

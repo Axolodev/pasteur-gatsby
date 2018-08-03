@@ -52,7 +52,7 @@ const ContactData = (props) => (
     </div>
     <div>
       <Subtitulo> E-mail </Subtitulo>
-      <Email>labpasteur@gmail.com</Email>
+      <Email>contacto@pasteur.mx</Email>
     </div>
   </Contacto>
 );

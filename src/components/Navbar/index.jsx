@@ -18,13 +18,21 @@ const NavLayout = styled.nav`
     "contact contact contact"
     "logo nav nav"
     "logo nav nav"
-    ". . .";  
+    ". . .";
   align-items: center;
   justify-content: space-evenly;
   font-family: ${props => props.theme.fontFamily.main};
   position: absolute;
   width: 100%;
   background: linear-gradient(180deg, rgba(44,68,134,1) 0%, rgba(5,6,255,0) 100%, rgba(0,212,255,1) 100%);
+  
+  @media (max-width: 50em){
+    grid-template-areas: 
+      ". . ."
+      "logo nav nav"
+      "logo nav nav"
+      ". . .";
+  }
 `;
 
 const ContactSection = styled.div`
@@ -34,6 +42,10 @@ const ContactSection = styled.div`
   justify-content: flex-end;
   height: 100%;
   box-shadow: inset 0px -2px 0px -1px white;
+  
+  @media (max-width: 50em){
+    display: none;
+  }
 `;
 
 const styledSection = styled.div`
@@ -46,16 +58,24 @@ const styledSection = styled.div`
   height: 100%;
 `;
 
+const Spacer = styled.div`
+  flex: 3;
+`;
+
 const PhoneSection = styledSection.extend`
   width: 15%;
+  flex: 1;
 `;
 
 const SocialsSection = styledSection.extend`
-  width: 29%;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: ${props => props.theme.fontFamily.main};
   font-size: 0.8rem;
   justify-content: space-between;
-  padding: 0 3%;
+  padding: 0 1em;
 `;
 
 const LogoSection = styled.div`
@@ -74,7 +94,7 @@ const LinksSection = styled.div`
   display: flex;
   grid-area: nav;  
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-right: 3.5em;
 `;
 
@@ -84,7 +104,6 @@ const Link = styled(NavLink)`
 	font-family: ${props => props.theme.fontFamily.main};
   text-transform: uppercase;
   color: white;
-  padding: 0 3em;
 
   &:visited {
     text-decoration: none;
@@ -103,14 +122,16 @@ const ExternalLink = styled.a`
 
 const Img = styled.img`
   width: 57%;
+  min-width: 10em;
 `;
 
 const Navbar = () => (
   <NavLayout>
     <ContactSection>
+      <Spacer />
       <PhoneSection> (81) 8354 8491</PhoneSection>
       <SocialsSection>
-        <div>labpasteur@gmail.com</div>
+        <div>contacto@pasteur.mx</div>
         <div>
           <ExternalLink target="_blank" href="https://www.facebook.com/laboratoriospasteuranalisisclinicos"><I className="fab fa-facebook-square" /></ExternalLink>
           <ExternalLink target="_blank" href="https://www.instagram.com/laboratoriospasteur"><I className="fab fa-instagram" /></ExternalLink>

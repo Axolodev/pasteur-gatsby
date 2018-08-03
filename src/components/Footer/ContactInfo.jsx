@@ -80,6 +80,13 @@ const Website = styled.div`
   }
 `
 
+const Horario = styled.ul`
+  
+  li {
+    padding-bottom: 1em;
+  }
+`;
+
 const ContactInfo = () => (
   <Layout>
     
@@ -93,6 +100,14 @@ const ContactInfo = () => (
     </Contacts>
     <Schedule>
       <h1>HORARIO</h1>
+      <Horario>
+        <li>Sucursal Matriz:</li>
+        <li>Lunes a Viernes 7 am a 7 pm</li>
+        <li>Sábados 8 am a 3 pm</li>
+        <li>Otras Sucursales:</li>
+        <li>Lunes a Viernes 7 am a 4 pm</li>
+        <li>Sábados 8 am a 3 pm</li>
+      </Horario>
     </Schedule>
     <DirectMessage>
       <h1>MENSAJE DIRECTO</h1>
