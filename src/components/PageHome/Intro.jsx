@@ -5,22 +5,24 @@ import { NavLink } from 'react-router-dom';
 import tecnologiasSVG from './icons/tecnologia.svg';
 import domicilioSVG from './icons/domicilio.svg';
 import ubicacionSVG from './icons/ubicacion.svg';
+import { device } from '../../utilities/device';
 
 const Section = styled.section`
   overflow: hidden;
   width: 100%;
-  min-height: 760px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 `;
 
 const Compromise = styled.div`
   display: flex;
-  flex: 4;
+
+  ${device.tablet} {
+    flex-direction: column;
+  }  
 `;
 
-const TextBlock = styled(NavLink)`
+const ConvertToBlockLink = (x) => styled(x)`
   color: white;
   background: ${props => props.backgroundcolor};
   display: flex;
@@ -32,10 +34,14 @@ const TextBlock = styled(NavLink)`
   font-size: 1.8rem;
   font-family: ${props => props.theme.fontFamily.main};
   text-align: center;
+  height: 25vw;
+  box-sizing: border-box;
 `;
 
+const TextBlock = ConvertToBlockLink(NavLink);
+
 const HideableTextBlock = TextBlock.extend`
-  @media (max-width: 50em) {
+  ${device.tablet} {
     display: none;
   }
 `;
@@ -50,16 +56,18 @@ const ExternalLink = styled.a`
   flex-grow: 1;
   text-decoration: none;
   font-size: 1.8rem;
+  box-sizing: border-box;
   font-family: ${props => props.theme.fontFamily.main};
   text-align: center;
+  height: 25vw;
 `;
 
 const Healthcare = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 4;
   align-items: center;
   justify-content: center;
+  padding: 3rem 0;
 `;
 
 const SectionHeader = styled.h1`
@@ -68,7 +76,13 @@ const SectionHeader = styled.h1`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.2rem;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
+  text-align: center;
+
+  ${device.tablet} {
+    width: 90%;
+    padding-bottom: 2.5rem;
+  }
 `;
 
 const SectionSubheader = styled.h3`
@@ -79,6 +93,10 @@ const SectionSubheader = styled.h3`
   width: 60%;
   font-style: italic;
   text-align: center;
+
+  ${device.tablet} {
+    width: 90%;
+  }
 `;
 
 const ValueProposition = styled.div`
@@ -86,6 +104,12 @@ const ValueProposition = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
+
+  ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const ValueCard = styled.div`
@@ -94,6 +118,10 @@ const ValueCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${device.tablet} {
+    padding: 1em 0;
+  }
 `;
 
 const ValueCardIcon = styled.img`
@@ -114,9 +142,15 @@ const ValueCardSupportText = styled.div`
 const Intro = () => (
   <Section>
     <Compromise>
-      <HideableTextBlock to="/nosotros" backgroundcolor="#2c4486">Compromiso con<br/>nuestros pacientes</HideableTextBlock>
-      <TextBlock to="#" backgroundcolor="#1995c9">Consulta nuestra<br/>lista de servicios</TextBlock>
-      <ExternalLink target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login" backgroundcolor="#2c4486">Consulta de<br/>resultados</ExternalLink>
+      <HideableTextBlock to="/nosotros" backgroundcolor="#2c4486">
+        Compromiso con<br/>nuestros pacientes
+      </HideableTextBlock>
+      <TextBlock to="#" backgroundcolor="#1995c9">
+        Consulta nuestra<br/>lista de servicios
+      </TextBlock>
+      <ExternalLink target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login" backgroundcolor="#2c4486">
+        Consulta de<br/>resultados
+      </ExternalLink>
     </Compromise>
     <Healthcare>
       <SectionHeader>siempre juntos, cuidándonos</SectionHeader>

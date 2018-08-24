@@ -1,127 +1,155 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { device } from '../../utilities/device';
 import ContactMethods from './ContactMethods';
 import Message from './Message';
 import Questions from './Questions';
 
 const Layout = styled.div`
   display: grid;
-  grid-template-columns: 30% 18% 20% auto;
-  grid-template-rows: 18% auto 15%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content;
   grid-template-areas:
-    "Motto Motto Motto Motto"
-    "Contact Schedule DM FAQ"
-    "Rights Website Website .";
+    "Motto Motto ."
+    "Contact Schedule DM"
+    "Rights . Website";
   box-sizing: border-box;
   height: auto;
-  padding: 1.6em 4.5em 1em;
+  padding: 2em 4.5em;
   background-color: ${props => props.theme.color.darkBlue};
   font-family: ${props => props.theme.fontFamily.main};
   color: white;
+  grid-row-gap: 1em;
 
-  h1 {
-    font-size: 1rem;
-    padding: 0 0 2em 0.8em;
+  ${device.laptop} {
+    padding: 2em;
+  }
+
+  ${device.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2em;
+    grid-template-areas:
+      "Motto Motto"
+      "Contact Schedule"
+      "DM DM"
+      "Rights Website";
+      padding: 2em;
+
+  }
+
+  ${device.mobile} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1em;
+    grid-template-areas:
+      "Motto Motto"
+      "Contact Contact"
+      "Schedule Schedule"
+      "DM DM"
+      "Rights Website";
+    padding: 1em;
+    
   }
 
   p, li {
     font-size: 0.75rem;
   }
-`
+`;
 
 const Motto = styled.div`
   grid-area: Motto;
-  padding: 13px 10px;
 
   p {
     font-size: 0.85rem;
     font-family: ${props => props.theme.fontFamily.main};
   }
-`
+`;
 
 const Contacts = styled.div`
   grid-area: Contact;
-`
+`;
 
 const Schedule = styled.div`
   grid-area: Schedule;
   box-sizing: border-box;
-  padding: 0 0 0 2em;
-`
+  padding-left: 2em;
+
+  ${device.mobile} {
+    padding-left: 0;
+  }
+`;
 
 const DirectMessage = styled.div`
   grid-area: DM;
   box-sizing: border-box;
-  padding: 0 0 0 0.4em;
-
-`
+`;
 
 const FAQ = styled.div`
   grid-area: FAQ;
   padding: 0 0 0 1em;
-`
+`;
 
 const Rights = styled.div`
   grid-area: Rights;
   display: flex;
-  align-items: center;
-  padding-left: 0.8em;
-`
+  padding: 1em 0;
+`;
 
 const Website = styled.div`
   grid-area: Website;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1em 0;
 
   p {
-    text-align: center;
+    text-align: right;
   }
-`
+`;
 
-const Horario = styled.ul`
-  
-  li {
-    padding-bottom: 1em;
-  }
+const SubsectionHeader = styled.h1`
+  font-size: 1rem;
+  padding-bottom: 1em;
+`;
+
+const Horario = styled.ul``;
+
+const HorarioItem = styled.li`
+  padding-bottom: 1em;
 `;
 
 const ContactInfo = () => (
   <Layout>
-    
     <Motto>
       <p>Laboratorios Pasteur, 21 años cuidandonos juntos.</p>
       <p>Brindando certeza accesible en análisis clínicos.</p>
     </Motto>
     <Contacts>
-      <h1>CONTACTO</h1>
+      <SubsectionHeader>CONTACTO</SubsectionHeader>
       <ContactMethods />
     </Contacts>
     <Schedule>
-      <h1>HORARIO</h1>
+      <SubsectionHeader>HORARIO</SubsectionHeader>
       <Horario>
-        <li>Sucursal Matriz:</li>
-        <li>Lunes a Viernes 7 am a 7 pm</li>
-        <li>Sábados 8 am a 3 pm</li>
-        <li>Otras Sucursales:</li>
-        <li>Lunes a Viernes 7 am a 4 pm</li>
-        <li>Sábados 8 am a 3 pm</li>
+        <HorarioItem>Sucursal Matriz:</HorarioItem>
+        <HorarioItem>Lunes a Viernes 7 am a 7 pm</HorarioItem>
+        <HorarioItem>Sábados 8 am a 3 pm</HorarioItem>
+        <HorarioItem>Otras Sucursales:</HorarioItem>
+        <HorarioItem>Lunes a Viernes 7 am a 4 pm</HorarioItem>
+        <HorarioItem>Sábados 8 am a 3 pm</HorarioItem>
       </Horario>
     </Schedule>
     <DirectMessage>
-      <h1>MENSAJE DIRECTO</h1>
+      <SubsectionHeader>MENSAJE DIRECTO</SubsectionHeader>
       <Message />
     </DirectMessage>
     <FAQ>
-      <h1>PREGUNTAS FRECUENTES</h1>
+      {/* <SubsectionHeader>PREGUNTAS FRECUENTES</SubsectionHeader>
       {false && <Questions />}
+      */}
     </FAQ>
     <Rights>
       <p>Derechos Reservados a Laboratorios Pasteur 2018</p>
     </Rights>
     <Website>
-      <p>www.laboratoriospasteur.mx</p>
+      <p>https://pasteur.mx</p>
     </Website>
   </Layout>
 );

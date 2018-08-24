@@ -8,6 +8,7 @@ import hombre from './icons/hombre.svg';
 import adultomayor from './icons/adultomayor.svg';
 import deportista from './icons/deportista.svg';
 import organizacion from './icons/organizacion.svg';
+import { device } from '../../utilities/device';
 
 const Section = styled.section`
   display: flex;
@@ -30,6 +31,18 @@ const Section = styled.section`
     background: url('${background}') center;
     z-index: -1;
   }
+
+  ${device.laptop} {
+    padding: 5em 1em;
+  }
+
+  ${device.tablet} {
+    padding: 3em 1em;
+  }
+
+  ${device.mobile} {
+    padding: 3em 0;
+  }
 `;
 
 const Layout = styled.div`
@@ -42,9 +55,13 @@ const Layout = styled.div`
   grid-gap: 1px;
   overflow: hidden;
 
-  @media (max-width: 50em) {
+  ${device.tablet} {
     height: auto;
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  }
+
+  ${device.mobile} {
+    grid-template: repeat(6, 1fr) / 1fr;
   }
 `;
 
@@ -72,6 +89,10 @@ const GridItemTitle = styled.div`
   text-transform: uppercase;
   font-size: 1.3em;
   font-weight: bold;
+
+  ${device.tablet} {
+    font-size: 1em;
+  }
 `;
 
 const GridItemDescription = styled.div`
@@ -82,6 +103,16 @@ const GridItemDescription = styled.div`
   width: 80%;
   font-family: ${props => props.theme.fontFamily.secondary};
   color: ${props => props.theme.color.white};
+
+  ${device.tablet} {
+    font-size: 0.9em;
+    width: 90%;
+  }
+
+  ${device.mobile} {
+    font-size: 0.9em;
+    width: 90%;
+  }
 `;
 
 const Img = styled.img`

@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import logo from './logo.svg';
-
-const I = styled.i`
-  color: white;
-  font-size: 2rem;
-  padding: 0 0.5em;
-`;
+import { device } from '../../utilities/device';
 
 const NavLayout = styled.nav`
   z-index: 1;
@@ -26,12 +21,9 @@ const NavLayout = styled.nav`
   width: 100%;
   background: linear-gradient(180deg, rgba(44,68,134,1) 0%, rgba(5,6,255,0) 100%, rgba(0,212,255,1) 100%);
   
-  @media (max-width: 50em){
-    grid-template-areas: 
-      ". . ."
-      "logo nav nav"
-      "logo nav nav"
-      ". . .";
+  ${device.tablet} {
+    grid-template-rows: minmax(5vh, 6em);
+    grid-template-areas: "logo nav nav";
   }
 `;
 
@@ -43,7 +35,7 @@ const ContactSection = styled.div`
   height: 100%;
   box-shadow: inset 0px -2px 0px -1px white;
   
-  @media (max-width: 50em){
+  ${device.tablet} {
     display: none;
   }
 `;
@@ -63,8 +55,11 @@ const Spacer = styled.div`
 `;
 
 const PhoneSection = styledSection.extend`
-  width: 15%;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  align-items: flex-end;
+  box-sizing: border-box;
 `;
 
 const SocialsSection = styledSection.extend`
@@ -74,8 +69,21 @@ const SocialsSection = styledSection.extend`
   justify-content: space-between;
   font-family: ${props => props.theme.fontFamily.main};
   font-size: 0.8rem;
-  justify-content: space-between;
-  padding: 0 1em;
+  box-sizing: border-box;
+
+  > * {
+    padding: 0 1em;
+  }
+`;
+
+const I = styled.i`
+  color: white;
+  font-size: 2rem;
+  padding: 0 0.5em;
+
+  ${device.laptop} {
+    font-size: 1.65em;
+  }
 `;
 
 const LogoSection = styled.div`
@@ -84,10 +92,14 @@ const LogoSection = styled.div`
   height: 100%;
   align-items: center;
   justify-content: flex-start;
-  padding-left:4em;
+  padding-left: 3.5em;
   color: white;
   font-size: 1.5rem;
   flex: 1;
+
+  ${device.laptop} {
+    padding-left: 1em;
+  }
 `;
 
 const LinksSection = styled.div`
@@ -96,6 +108,14 @@ const LinksSection = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-right: 3.5em;
+  
+  ${device.laptop} {
+    padding-right: 1em;
+  }
+
+  ${device.tablet} {
+    display: none;
+  }
 `;
 
 const Link = styled(NavLink)`
@@ -125,11 +145,26 @@ const Img = styled.img`
   min-width: 10em;
 `;
 
+const PhoneNumber = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 17%;
+  text-align: right;
+
+  ${device.laptop} {
+    padding: 0 10%;
+    font-size: 0.9em;
+  }
+`;
+
 const Navbar = () => (
   <NavLayout>
     <ContactSection>
       <Spacer />
-      <PhoneSection> (81) 8354 8491</PhoneSection>
+      <PhoneSection>
+        <PhoneNumber>(81) 8354 8491</PhoneNumber>
+        <PhoneNumber>8358 3957</PhoneNumber>
+      </PhoneSection>
       <SocialsSection>
         <div>contacto@pasteur.mx</div>
         <div>
@@ -143,7 +178,7 @@ const Navbar = () => (
       <Link to="/">Inicio</Link>
       <Link to="/nosotros">Sobre Nosotros</Link>
       <Link to="/servicios">Servicios</Link>
-      <Link to="/contacto">Contacto</Link>
+      <Link to="/contacto">Sucursales</Link>
     </LinksSection>
   </NavLayout>
 );

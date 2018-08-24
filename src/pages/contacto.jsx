@@ -5,6 +5,7 @@ import ContactData from '../components/PageContact/ContactData';
 import Delivery from '../components/PageContact/Delivery';
 import Map from '../components/PageContact/Map';
 import Locations from './../components/PageContact/Locations';
+import { device } from '../utilities/device';
 
 const Placeholder = styled.div`
   height: 200px;
@@ -22,7 +23,7 @@ const Container = styled.div`
   box-sizing: border-box;
   padding: 3rem 4.5em;
 
-  @media (max-width: 50em) {
+  ${device.tablet} {
     grid-template-rows: 13em 40em auto ;
     grid-template-columns: 100%;
     grid-row-gap: 1em;
@@ -39,7 +40,7 @@ const Contact = styled(ContactData)`
 
 const Del = styled(Delivery)`
   grid-area: Domicilio;
-  @media (max-width: 50em) {
+  ${device.tablet} {
     display: none;
   }
 `;
