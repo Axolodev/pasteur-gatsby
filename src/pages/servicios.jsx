@@ -3,11 +3,20 @@ import styled from 'styled-components';
 import { List, AutoSizer } from 'react-virtualized';
 
 import services from '../components/PageServices/assets/services.json';
+import { device } from '../utilities/device';
 
 const Layout = styled.div`
   padding: 13rem 6rem;
   font-family: ${props => props.theme.fontFamily.main};
   color: #333;
+
+  ${device.tablet} {
+    padding: 10em 3em;
+  }
+
+  ${device.mobile} {
+    padding: 10em 0.5em;
+  }
 `;
 
 const PageHeader = styled.h1`

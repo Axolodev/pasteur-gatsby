@@ -22,7 +22,9 @@ const Compromise = styled.div`
   }  
 `;
 
-const ConvertToBlockLink = (x) => styled(x)`
+
+
+const TextBlock = styled(NavLink)`
   color: white;
   background: ${props => props.backgroundcolor};
   display: flex;
@@ -36,9 +38,11 @@ const ConvertToBlockLink = (x) => styled(x)`
   text-align: center;
   height: 25vw;
   box-sizing: border-box;
-`;
 
-const TextBlock = ConvertToBlockLink(NavLink);
+  ${device.tablet} {
+    min-height: 6em;
+  }
+`;
 
 const HideableTextBlock = TextBlock.extend`
   ${device.tablet} {
@@ -60,6 +64,10 @@ const ExternalLink = styled.a`
   font-family: ${props => props.theme.fontFamily.main};
   text-align: center;
   height: 25vw;
+
+  ${device.tablet} {
+    min-height: 6em;
+  }
 `;
 
 const Healthcare = styled.div`
@@ -154,7 +162,7 @@ const Intro = () => (
     </Compromise>
     <Healthcare>
       <SectionHeader>siempre juntos, cuidándonos</SectionHeader>
-      <SectionSubheader>Nuestro filosofía de trabajo es mantenernos en constante cambio, adaptando nuestros servicios<br/> al estilo de vida de nuestros diferentes pacientes.</SectionSubheader>
+      <SectionSubheader>Nuestro filosofía de trabajo es mantenernos en constante cambio, adaptando nuestros servicios al estilo de vida de nuestros diferentes pacientes.</SectionSubheader>
       <ValueProposition>
         <ValueCard>
           <ValueCardIcon src={tecnologiasSVG}/>

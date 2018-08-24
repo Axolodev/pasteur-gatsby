@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { device } from '../../utilities/device';
 
 
 const ButtonCont = styled.div`
@@ -12,6 +13,18 @@ const ButtonCont = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  ${device.laptop} {
+    width: 75%;
+  }
+
+  ${device.tablet} {
+    width: 85%;
+  }
+
+  ${device.mobile} {
+    width: 95%;
+  }
 `;
 
 const Title = styled.p`

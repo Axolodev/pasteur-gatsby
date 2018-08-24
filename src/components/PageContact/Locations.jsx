@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { device } from '../../utilities/device';
+
 const Layout = styled.div`
   grid-area: Sucursales;
 `;
@@ -10,6 +12,13 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   font-family: ${props => props.theme.fontFamily.main};
+  justify-content: space-between;
+
+  ${device.mobile} {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Title = styled.p`
@@ -20,6 +29,10 @@ const Title = styled.p`
   font-weight: 700;
   text-align: left;
   color: #989898;
+
+  ${device.mobile} {
+    text-align: center;
+  }
 `;
 
 const SucursalName = styled.p`
@@ -36,9 +49,10 @@ const Direccion = styled.p`
 
 const Sucursal = styled.div`
   box-sizing: border-box;
-  max-width: 15em;
-  min-width: 12em;
+  max-width: 13em;
+  min-width: 13em;
   padding: 2em 1em;
+  padding-left: 0;
   padding-bottom: 0;
   flex: 1;
 `;

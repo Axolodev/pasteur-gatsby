@@ -18,7 +18,7 @@ const Container = styled.div`
   grid-template-areas:
       "Contacto Mapa"
       "Domicilio Sucursales";
-  grid-column-gap: 5rem;
+  grid-column-gap: 3rem;
   grid-row-gap: 2rem;
   box-sizing: border-box;
   padding: 3rem 4.5em;
@@ -27,10 +27,16 @@ const Container = styled.div`
     grid-template-rows: 13em 40em auto ;
     grid-template-columns: 100%;
     grid-row-gap: 1em;
+    padding: 3em 1.5em;
     grid-template-areas:
       "Contacto"
       "Mapa"
       "Sucursales";
+  }
+
+  ${device.mobile} {
+    padding: 3em 0.5em;
+    grid-template-rows: 13em 20em auto ;
   }
 `;
 
@@ -40,6 +46,7 @@ const Contact = styled(ContactData)`
 
 const Del = styled(Delivery)`
   grid-area: Domicilio;
+
   ${device.tablet} {
     display: none;
   }
