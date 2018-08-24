@@ -1,5 +1,6 @@
 ---
-title: Sucursal La Luz (Plaza Vía la Luz)
+title: 'Sucursal La Luz '
+address: 'Av La luz, Plaza Vía La Luz, Col. Pedregal de la Silla, Monterrey, N.L'
 type: sucursales
 phone: 01 81 8354 8491
 coords:
