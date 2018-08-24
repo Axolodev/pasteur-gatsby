@@ -29,26 +29,23 @@ const Layout = styled.div`
   ${device.tablet} {
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 2em;
+    padding: 2em;
     grid-template-areas:
       "Motto Motto"
       "Contact Schedule"
       "DM DM"
       "Rights Website";
-      padding: 2em;
-
   }
 
   ${device.mobile} {
-    grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 1em;
+    padding: 1em;
     grid-template-areas:
       "Motto Motto"
       "Contact Contact"
       "Schedule Schedule"
       "DM DM"
       "Rights Website";
-    padding: 1em;
-    
   }
 
   p, li {
@@ -85,6 +82,7 @@ const DirectMessage = styled.div`
 `;
 
 const FAQ = styled.div`
+  display: none;
   grid-area: FAQ;
   padding: 0 0 0 1em;
 `;
@@ -141,9 +139,8 @@ const ContactInfo = () => (
       <Message />
     </DirectMessage>
     <FAQ>
-      {/* <SubsectionHeader>PREGUNTAS FRECUENTES</SubsectionHeader>
+      <SubsectionHeader>PREGUNTAS FRECUENTES</SubsectionHeader>
       {false && <Questions />}
-      */}
     </FAQ>
     <Rights>
       <p>Derechos Reservados a Laboratorios Pasteur 2018</p>

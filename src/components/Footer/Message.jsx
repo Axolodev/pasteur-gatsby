@@ -6,8 +6,13 @@ const Form = styled.form`
   flex-direction: column;
 `;
 
-const FieldName = styled.p`
-  padding: 0.2em 0 0.5em 2.3em;
+const FieldLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FieldName = styled.span`
+  padding: 0.5em 0;
 `;
 
 const Text = styled.textarea`
@@ -26,10 +31,14 @@ const Submit = styled.input`
 
 const Message = () => (
   <Form action="" method="post">
-    <FieldName>Email</FieldName>
-    <Text/>
-    <FieldName>Mensaje</FieldName>
-    <Text msg/>
+    <FieldLabel>
+      <FieldName>Email</FieldName>
+      <Text/>
+    </FieldLabel>
+    <FieldLabel>
+      <FieldName>Mensaje</FieldName>
+      <Text msg/>
+    </FieldLabel>
     <Submit type='submit' value='Enviar'/>
   </Form>
 );
