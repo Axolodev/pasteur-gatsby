@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import tecnologiasSVG from './icons/tecnologia.svg';
+import urgencia from './icons/urgencia.png';
 import domicilioSVG from './icons/domicilio.svg';
 import ubicacionSVG from './icons/ubicacion.svg';
 import { device } from '../../utilities/device';
@@ -21,8 +22,6 @@ const Compromise = styled.div`
     flex-direction: column;
   }  
 `;
-
-
 
 const TextBlock = styled(NavLink)`
   color: white;
@@ -132,9 +131,29 @@ const ValueCard = styled.div`
   }
 `;
 
+const ValuCardIconContainer = styled.div`
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  background: ${({theme}) => theme.color.lightBlue};
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ValueCardImage = styled.img`
+  width: 70%;
+  height: 70%;
+`;
+
 const ValueCardIcon = styled.img`
   width: 100%;
   max-width: 120px;
+  height: 120px;
+  background: ${({theme}) => theme.color.lightBlue};
+  border-radius: 100%;
 `;
 
 const ValueCardSupportText = styled.div`
@@ -165,16 +184,18 @@ const Intro = () => (
       <SectionSubheader>Nuestro filosofía de trabajo es mantenernos en constante cambio, adaptando nuestros servicios al estilo de vida de nuestros diferentes pacientes.</SectionSubheader>
       <ValueProposition>
         <ValueCard>
-          <ValueCardIcon src={tecnologiasSVG}/>
-          <ValueCardSupportText>Tecnología<br />de Vanguardia</ValueCardSupportText>
-        </ValueCard>
-        <ValueCard>
-          <ValueCardIcon src={domicilioSVG}/>
-          <ValueCardSupportText>Servicio<br/>a domicilio</ValueCardSupportText>
+          <ValuCardIconContainer>
+            <ValueCardImage src={urgencia}/>
+          </ValuCardIconContainer>
+          <ValueCardSupportText>Servicio<br />de urgencia</ValueCardSupportText>
         </ValueCard>
         <ValueCard>
           <ValueCardIcon src={ubicacionSVG}/>
           <ValueCardSupportText>Siempre<br/>cerca de ti</ValueCardSupportText>
+        </ValueCard>
+        <ValueCard>
+          <ValueCardIcon src={domicilioSVG}/>
+          <ValueCardSupportText>Servicio<br/>a domicilio</ValueCardSupportText>
         </ValueCard>
       </ValueProposition>
     </Healthcare>

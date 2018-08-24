@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
+import mapIcon from './assets/map-icon.png';
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,6 +20,7 @@ class Map extends Component {
         {this.props.locations.map((sucursal, index) => (
           <Marker
             key={index}
+            icon={mapIcon}
             position={{ 
               lat: sucursal.latitude, 
               lng: sucursal.longitude

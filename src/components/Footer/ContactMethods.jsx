@@ -42,8 +42,8 @@ const ContactMethods = () => (
     </ContactItem>
     <hr/>
     <ContactItem>
-      <p>Redes Sociales</p>
-      <p>@laboratoriospasteuranalisisclinicos</p>
+      <p>Facebook</p>
+      <p>laboratoriospasteuranalisisclinicos</p>
     </ContactItem>
   </ContactList>
 );
