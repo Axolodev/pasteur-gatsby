@@ -78,7 +78,7 @@ const DeliveryButton = () => (
       <Text>Siempre accesibles, siempre cerca de ti. Contáctanos ahora.</Text>
     </Div>
     <Div width={35}>
-      <Button to="/contacto">Ver localizaciones</Button>
+      <Button to="/sucursales">Ver localizaciones</Button>
     </Div>
   </ButtonCont>
 );

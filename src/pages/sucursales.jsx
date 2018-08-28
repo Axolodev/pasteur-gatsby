@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ContactData from '../components/PageContact/ContactData';
 import Delivery from '../components/PageContact/Delivery';
 import Map from '../components/PageContact/Map';
-import Locations from './../components/PageContact/Locations';
+import Locations from '../components/PageContact/Locations';
 import { device } from '../utilities/device';
 
 const Placeholder = styled.div`

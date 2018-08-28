@@ -170,7 +170,7 @@ class Navigation extends Component {
           <Link to="/">Inicio</Link>
           <Link to="/nosotros">Sobre Nosotros</Link>
           <Link to="/servicios">Servicios</Link>
-          <Link to="/contacto">Sucursales</Link>
+          <Link to="/sucursales">Sucursales</Link>
         </LinksSection>
       </NavSection>
     );
