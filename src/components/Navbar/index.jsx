@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import logo from './logo.svg';
 import { device } from '../../utilities/device';
+import Navigation from './Navigation';
 
 const NavLayout = styled.nav`
   z-index: 1;
@@ -23,7 +24,7 @@ const NavLayout = styled.nav`
   
   ${device.tablet} {
     grid-template-rows: minmax(5vh, 6em);
-    grid-template-areas: "logo nav nav";
+    grid-template-areas: "logo . nav";
   }
 `;
 
@@ -102,33 +103,6 @@ const LogoSection = styled.div`
   }
 `;
 
-const LinksSection = styled.div`
-  display: flex;
-  grid-area: nav;  
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 3.5em;
-  
-  ${device.laptop} {
-    padding-right: 1em;
-  }
-
-  ${device.tablet} {
-    display: none;
-  }
-`;
-
-const Link = styled(NavLink)`
-  text-decoration: none;
-  font-size: 0.8rem;
-	font-family: ${props => props.theme.fontFamily.main};
-  text-transform: uppercase;
-  color: white;
-
-  &:visited {
-    text-decoration: none;
-  }
-`;
 
 const ExternalLink = styled.a`
   text-decoration: none;
@@ -168,18 +142,19 @@ const Navbar = () => (
       <SocialsSection>
         <div>contacto@pasteur.mx</div>
         <div>
-          <ExternalLink target="_blank" href="https://www.facebook.com/laboratoriospasteuranalisisclinicos"><I className="fab fa-facebook-square" /></ExternalLink>
-          <ExternalLink target="_blank" href="https://www.instagram.com/laboratoriospasteur"><I className="fab fa-instagram" /></ExternalLink>
+          <ExternalLink target="_blank" href="https://www.facebook.com/laboratoriospasteuranalisisclinicos">
+            <I className="fab fa-facebook-square" />
+          </ExternalLink>
+          <ExternalLink target="_blank" href="https://www.instagram.com/laboratoriospasteur">
+            <I className="fab fa-instagram" />
+          </ExternalLink>
         </div>
       </SocialsSection>
     </ContactSection>
-    <LogoSection><NavLink to="/"><Img src={logo} alt="logo" /></NavLink></LogoSection>
-    <LinksSection>
-      <Link to="/">Inicio</Link>
-      <Link to="/nosotros">Sobre Nosotros</Link>
-      <Link to="/servicios">Servicios</Link>
-      <Link to="/contacto">Sucursales</Link>
-    </LinksSection>
+    <LogoSection>
+      <NavLink to="/"><Img src={logo} alt="logo" /></NavLink>
+    </LogoSection>
+    <Navigation />
   </NavLayout>
 );
 
