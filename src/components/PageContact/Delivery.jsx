@@ -15,14 +15,14 @@ const Title = styled.p`
   font-size: 2rem;
   font-weight: bold;
   text-align: left;
-  color: #989898;
+  color: #333;
   padding-bottom: 30px;
 `;
 
 const Text = styled.p`
   font-size: 1.2rem;
   line-height: 1.2em;
-  color: #989898;
+  color: #333;
   padding-bottom: 30px;
   font-family: ${({theme}) => theme.fontFamily.main};
 `;

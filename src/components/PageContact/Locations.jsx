@@ -28,7 +28,7 @@ const Title = styled.p`
   font-size: 2rem;
   font-weight: 700;
   text-align: left;
-  color: #989898;
+  color: #333;
 
   ${device.mobile} {
     text-align: center;
@@ -36,14 +36,14 @@ const Title = styled.p`
 `;
 
 const SucursalName = styled.p`
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 700;
-  color: #989898;
+  color: #333;
 `;
 
 const Direccion = styled.p`
-  font-size: 1.3em;
-  color: #989898;
+  font-size: 1em;
+  color: #333;
   line-height: 1.2rem;
 `;
 

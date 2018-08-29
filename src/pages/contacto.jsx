@@ -4,14 +4,11 @@ import styled from 'styled-components';
 import ContactData from '../components/PageContact/ContactData';
 import Delivery from '../components/PageContact/Delivery';
 import Map from '../components/PageContact/Map';
-import Locations from './../components/PageContact/Locations';
+import Locations from '../components/PageContact/Locations';
+import _Layout from '../components/Layout';
 import { device } from '../utilities/device';
 
-const Placeholder = styled.div`
-  height: 200px;
-`;
-
-const Container = styled.div`
+const Container = _Layout.extend`
   display: grid;
   grid-template-rows: 18rem auto;
   grid-template-columns: 25% auto;
@@ -21,13 +18,11 @@ const Container = styled.div`
   grid-column-gap: 3rem;
   grid-row-gap: 2rem;
   box-sizing: border-box;
-  padding: 3rem 4.5em;
 
   ${device.tablet} {
     grid-template-rows: 13em 40em auto ;
     grid-template-columns: 100%;
     grid-row-gap: 1em;
-    padding: 3em 1.5em;
     grid-template-areas:
       "Contacto"
       "Mapa"
@@ -35,7 +30,6 @@ const Container = styled.div`
   }
 
   ${device.mobile} {
-    padding: 3em 0.5em;
     grid-template-rows: 13em 20em auto ;
   }
 `;
@@ -72,7 +66,6 @@ const PageContact = ({data}) => {
 
   return (
     <div>
-      <Placeholder />
       <Container>
         <Contact matrixLocation={matrixLocation}/>
         <Del />

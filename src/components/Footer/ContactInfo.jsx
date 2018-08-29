@@ -102,7 +102,7 @@ const Website = styled.div`
   }
 `;
 
-const SubsectionHeader = styled.h1`
+const SubsectionHeader = styled.h3`
   font-size: 1rem;
   padding-bottom: 1em;
 `;

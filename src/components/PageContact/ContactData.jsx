@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { H3 } from '../Headers';
 
 const Contacto = styled.div`
   display: flex;
@@ -9,26 +10,22 @@ const Contacto = styled.div`
   font-family: ${({theme}) => theme.fontFamily.main};
 `;
 
-const Titulo = styled.p`
+const Titulo = H3.extend`
   text-transform: uppercase;
-  font-family: ${props => props.theme.fontFamily.main};
-  font-size: 2rem;
-  font-weight: 700;
   text-align: left;
-  color: #989898;
   padding-bottom: 10px;
 `;
 
 const Subtitulo = styled.p`
   font-size: 1.2rem;
   font-weight: 700;
-  color: #989898;
+  color: #333;
   line-height: 2rem;
 `;
 
 const Texto = styled.p`
   font-size: 1.1rem;
-  color: #989898;
+  color: #333;
 `;
 
 const TextoExt = Texto.extend`

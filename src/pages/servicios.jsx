@@ -3,26 +3,16 @@ import styled from 'styled-components';
 import { List, AutoSizer } from 'react-virtualized';
 
 import services from '../components/PageServices/assets/services.json';
-import { device } from '../utilities/device';
+import _Layout from '../components/Layout';
+import { H1 } from '../components/Headers';
 
-const Layout = styled.div`
-  padding: 13rem 6rem;
+
+const Layout = _Layout.extend`
   font-family: ${props => props.theme.fontFamily.main};
   color: #333;
-
-  ${device.tablet} {
-    padding: 10em 3em;
-  }
-
-  ${device.mobile} {
-    padding: 10em 0.5em;
-  }
 `;
 
-const PageHeader = styled.h1`
-  font-family: inherit;
-  font-size: 2.2rem;
-  font-weight: 700;
+const PageHeader = H1.extend`
   padding-bottom: 1rem;
 `;
 

@@ -20,6 +20,13 @@ module.exports = {
         path: `${__dirname}/content/sucursales`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `noticias`,
+        path: `${__dirname}/content/noticias`,
+      },
+    },
     'gatsby-transformer-remark'
   ]
 }

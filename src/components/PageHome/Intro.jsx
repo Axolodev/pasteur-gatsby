@@ -77,7 +77,7 @@ const Healthcare = styled.div`
   padding: 3rem 0;
 `;
 
-const SectionHeader = styled.h1`
+const SectionHeader = styled.h2`
   font-family: ${props => props.theme.fontFamily.main};
   color: #959698;
   text-transform: uppercase;
@@ -92,7 +92,7 @@ const SectionHeader = styled.h1`
   }
 `;
 
-const SectionSubheader = styled.h3`
+const SectionSubheader = styled.p`
   font-family: ${props => props.theme.fontFamily.secondary};
   color: #959698;
   font-weight: 1.5em;

@@ -9,22 +9,26 @@ import Navigation from './Navigation';
 const NavLayout = styled.nav`
   z-index: 1;
   display: grid;
-  grid-template: repeat(4, minmax(2.5vh, 47px)) / 3fr 1fr 2fr;
+  grid-template: repeat(4, minmax(2.5vh, 47px)) / 3fr 3fr;
   grid-template-areas: 
-    "contact contact contact"
-    "logo nav nav"
-    "logo nav nav"
-    ". . .";
+    "contact contact"
+    "logo nav"
+    "logo nav"
+    ". .";
   align-items: center;
   justify-content: space-evenly;
   font-family: ${props => props.theme.fontFamily.main};
   position: absolute;
   width: 100%;
   background: linear-gradient(180deg, rgba(44,68,134,1) 0%, rgba(5,6,255,0) 100%, rgba(0,212,255,1) 100%);
+
+  ${device.laptop} {
+    grid-template-columns: 2fr 3fr;
+  }
   
   ${device.tablet} {
     grid-template-rows: minmax(5vh, 6em);
-    grid-template-areas: "logo . nav";
+    grid-template-areas: "logo nav";
   }
 `;
 
@@ -53,6 +57,10 @@ const styledSection = styled.div`
 
 const Spacer = styled.div`
   flex: 3;
+
+  ${device.laptop} {
+    flex: 0;
+  }
 `;
 
 const PhoneSection = styledSection.extend`
@@ -61,6 +69,11 @@ const PhoneSection = styledSection.extend`
   flex: 1;
   align-items: flex-end;
   box-sizing: border-box;
+
+  ${device.laptop} {
+    flex: 2;
+    border-left-width: 0;
+  }
 `;
 
 const SocialsSection = styledSection.extend`
