@@ -39,6 +39,10 @@ collections:
     fields:
       - { name: title, label: "Título" }
       - { name: path, label: "Ruta" }
+      - label: "Imagen destacada"
+        name: "thumbnail"
+        widget: "image"
+        default: "/uploads/chocolate-dogecoin.jpg"
       - { name: type, label: 'Hidden Type', widget: hidden, default: "news" }
       - { name: date, label: "Fecha", widget: date }
       - { name: body, label: "Contenido", widget: markdown }
