@@ -5,13 +5,21 @@ import ReactMarkdown from 'react-markdown';
 import Layout from '../components/Layout';
 import { H1 } from '../components/Headers';
 import { HeaderSizes } from './../components/Headers';
+import { device } from '../utilities/device';
 
 const ImageContainer = styled.div`
-
+  flex: 1;
+  text-align: center;
 `;
 
 const FeaturedImage = styled.img`
-  height: 50vh;
+  width: 50vw;
+  max-width: 100%;
+  height: auto;
+
+  ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const PostDate = styled.time`
