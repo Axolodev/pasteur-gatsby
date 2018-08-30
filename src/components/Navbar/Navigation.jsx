@@ -26,6 +26,8 @@ const NavSection = styled.div`
       background: rgba(0, 0, 0, 0.9);
       justify-content: flex-start;
       align-items: flex-start;
+      top: 0;
+      left: 0;
     `};
   }
 `;
@@ -57,6 +59,10 @@ const MenuButton = styled.div`
   ${device.tablet} {
     display: flex;
   } 
+
+  ${device.mobile} {
+    height: 20px;
+  }
 `;
 
 const MenuButtonBar = styled.span`
@@ -65,6 +71,11 @@ const MenuButtonBar = styled.span`
   background-color: white;
   transition: 300ms linear all;
   transform-origin: left;
+
+  ${device.mobile} {
+    height: 4px;
+    width: 24px;
+  }
 `;
 
 const BarOne = MenuButtonBar.extend.attrs({

@@ -114,6 +114,10 @@ const LogoSection = styled.div`
   ${device.laptop} {
     padding-left: 1em;
   }
+
+  ${device.mobile} {
+    padding-left: 0.5em;
+  }
 `;
 
 
@@ -130,6 +134,10 @@ const ExternalLink = styled.a`
 const Img = styled.img`
   width: 57%;
   min-width: 10em;
+  
+  ${device.mobile} {
+    min-width: 9em;
+  }
 `;
 
 const PhoneNumber = styled.div`

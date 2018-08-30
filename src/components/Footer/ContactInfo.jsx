@@ -6,7 +6,7 @@ import ContactMethods from './ContactMethods';
 import Message from './Message';
 import Questions from './Questions';
 
-const Layout = styled.div`
+const Layout = styled.footer`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: min-content;

@@ -12,6 +12,7 @@ const ContactItem = styled.div`
   height: 1.8em;
   padding: 0 0 0 0.8em;
   align-items: center;
+  word-break: break-all;
 
   > p:first-child {
     flex: 1;
