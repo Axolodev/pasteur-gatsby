@@ -1,7 +1,7 @@
 ---
 title: Noticia prueba
 path: /noticia-prueba-2018-08-28
-thumbnail: /assets/uploads/appointment-appointment-book-blur-40568.jpg
+image: /assets/uploads/appointment-appointment-book-blur-40568.jpg
 type: news
 date: '2018-08-28'
 ---

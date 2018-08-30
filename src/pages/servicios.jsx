@@ -93,7 +93,6 @@ class Servicios extends React.Component {
   handleInput = ({target}) => {
     const {value} = target;
 
-    
     this.setState(() => {
       const filteredServices = services.filter(service => service.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 )
 

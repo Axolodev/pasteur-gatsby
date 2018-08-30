@@ -1,9 +1,9 @@
 ---
-title: Test news 2
-path: /test-news-cooler
+title: Test news 3
+path: /test-news-cooler-3
 image: /assets/uploads/logo-servicio-a-domicilio-1-.jpg
 type: news
-date: '2018-08-29'
+date: '2017-08-29'
 ---
 # Dillinger
 

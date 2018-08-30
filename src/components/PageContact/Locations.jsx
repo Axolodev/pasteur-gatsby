@@ -8,16 +8,16 @@ const Layout = styled.div`
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   font-family: ${props => props.theme.fontFamily.main};
   justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
 
   ${device.mobile} {
-    text-align: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 `;
 
@@ -25,9 +25,9 @@ const Title = styled.p`
   font-family: ${props => props.theme.fontFamily.main};
   text-transform: uppercase;
   line-height: 2.5rem;
-  font-size: 2rem;
   font-weight: 700;
   text-align: left;
+  font-size: 2rem;
   color: #333;
 
   ${device.mobile} {
@@ -42,18 +42,17 @@ const SucursalName = styled.p`
 `;
 
 const Direccion = styled.p`
+  line-height: 1.2rem;
   font-size: 1em;
   color: #333;
-  line-height: 1.2rem;
 `;
 
 const Sucursal = styled.div`
   box-sizing: border-box;
+  padding-right: 1em;
+  padding-top: 2em;
   max-width: 13em;
   min-width: 13em;
-  padding: 2em 1em;
-  padding-left: 0;
-  padding-bottom: 0;
   flex: 1;
 `;
 
