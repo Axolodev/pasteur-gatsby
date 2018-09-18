@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import tecnologiasSVG from './icons/tecnologia.svg';
 import urgencia from './icons/urgencia.png';
-import domicilioSVG from './icons/domicilio.svg';
+import domicilioIcon from './icons/domicilio.webp';
 import ubicacionSVG from './icons/ubicacion.svg';
 import { device } from '../../utilities/device';
 
@@ -194,7 +194,9 @@ const Intro = () => (
           <ValueCardSupportText>Siempre<br/>cerca de ti</ValueCardSupportText>
         </ValueCard>
         <ValueCard>
-          <ValueCardIcon src={domicilioSVG}/>
+          <ValuCardIconContainer>
+            <ValueCardImage src={domicilioIcon}/>
+          </ValuCardIconContainer>
           <ValueCardSupportText>Servicio<br/>a domicilio</ValueCardSupportText>
         </ValueCard>
       </ValueProposition>
