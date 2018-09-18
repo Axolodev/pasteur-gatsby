@@ -36,9 +36,11 @@ const Layout = ({ children, data }) => (
             type:"image/x-icon"
           }
         ]}
-        script={[
-          {
+        script={[{
             src:"https://identity.netlify.com/v1/netlify-identity-widget.js"
+          }, {
+            src: "https://www.googletagmanager.com/gtag/js?id=UA-125738292-1",
+            async: true
           }
         ]}
       />
@@ -46,6 +48,13 @@ const Layout = ({ children, data }) => (
       {children()}
       <Footer />
       {() => {
+        if(!window) return;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-125738292-1');
+
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
             if (!user) {
