@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import tecnologiasSVG from './icons/tecnologia.svg';
 import urgencia from './icons/urgencia.png';
-import domicilioIcon from './icons/domicilio.webp';
+import domicilioIcon from './icons/domicilio.png';
 import ubicacionSVG from './icons/ubicacion.svg';
 import { device } from '../../utilities/device';
 
