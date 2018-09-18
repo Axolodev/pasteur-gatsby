@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { device } from '../../utilities/device';
+import { gtag } from './../../utilities/gtag';
 
 function phoneNumberOne () {
   gtag('config', 'AW-789445090/GGMwCJjkuYkBEOLzt_gC', {
