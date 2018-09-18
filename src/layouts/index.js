@@ -8,6 +8,7 @@ import Footer from './../components/Footer/index';
 import { globalTheme } from './themes';
 
 import './index.css'
+import { gtag } from './../utilities/gtag';
 
 const Layout = ({ children, data }) => (
   <ThemeProvider theme={globalTheme}>
@@ -48,11 +49,7 @@ const Layout = ({ children, data }) => (
       {children()}
       <Footer />
       {() => {
-        if(!window) return;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-      
         gtag('config', 'UA-125738292-1');
 
         if (window.netlifyIdentity) {

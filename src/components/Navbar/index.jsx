@@ -86,17 +86,30 @@ const SocialsSection = styledSection.extend`
   box-sizing: border-box;
 
   > * {
-    padding: 0 1em;
+    padding: 0 2rem;
+
+    ${device.laptop} {
+      padding: 0 1rem;
+    }
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  width: 8em;
+  justify-content: space-between;
+
+  ${device.laptop} {
+    width: 5em;
   }
 `;
 
 const I = styled.i`
   color: white;
   font-size: 2rem;
-  padding: 0 0.5em;
 
   ${device.laptop} {
-    font-size: 1.65em;
+    font-size: 1.8em;
   }
 `;
 
@@ -106,9 +119,8 @@ const LogoSection = styled.div`
   height: 100%;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 3.5em;
+  padding-left: 2em;
   color: white;
-  font-size: 1.5rem;
   flex: 1;
 
   ${device.laptop} {
@@ -124,7 +136,6 @@ const LogoSection = styled.div`
 const ExternalLink = styled.a`
   text-decoration: none;
   height: 100%;
-  width: 100%;
 
   &:visited {
     text-decoration: none;
@@ -132,8 +143,12 @@ const ExternalLink = styled.a`
 `;
 
 const Img = styled.img`
-  width: 57%;
-  min-width: 10em;
+  width: 20em;
+  min-height: 5rem;
+
+  ${device.laptop} {
+    width: 15em;
+  }
   
   ${device.mobile} {
     min-width: 9em;
@@ -162,14 +177,14 @@ const Navbar = () => (
       </PhoneSection>
       <SocialsSection>
         <div>contacto@pasteur.mx</div>
-        <div>
+        <SocialIcons>
           <ExternalLink target="_blank" href="https://www.facebook.com/laboratoriospasteuranalisisclinicos">
             <I className="fab fa-facebook-square" />
           </ExternalLink>
           <ExternalLink target="_blank" href="https://www.instagram.com/laboratoriospasteur">
             <I className="fab fa-instagram" />
           </ExternalLink>
-        </div>
+        </SocialIcons>
       </SocialsSection>
     </ContactSection>
     <LogoSection>

@@ -131,7 +131,7 @@ const ContactInfo = () => (
         <HorarioItem>Sábados 8 am a 3 pm</HorarioItem>
         <HorarioItem>Otras Sucursales:</HorarioItem>
         <HorarioItem>Lunes a Viernes 7 am a 4 pm</HorarioItem>
-        <HorarioItem>Sábados 7 am a 3 pm</HorarioItem>
+        <HorarioItem>Sábados 7 am a 4 pm</HorarioItem>
       </Horario>
     </Schedule>
     <DirectMessage>

@@ -8,7 +8,7 @@ const NavSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 3.5em;
+  padding-right: 2em;
   box-sizing: border-box;
 
   ${device.laptop} {
@@ -104,6 +104,14 @@ const LinksSection = styled.div`
   justify-content: space-between;
   box-sizing: border-box;
 
+  > :first-child {
+    margin-left: 0;
+  }
+
+  > :last-child {
+    margin-right: 0;
+  }
+
   ${device.tablet} {
     display: none;
     width: 100%;
@@ -122,6 +130,8 @@ const Link = styled(NavLink)`
 	font-family: ${props => props.theme.fontFamily.main};
   text-transform: uppercase;
   color: white;
+  text-align: center;
+  margin: 0 0.75em;
   
   &:visited {
     text-decoration: none;
@@ -143,10 +153,13 @@ const Link = styled(NavLink)`
       background: rgba(255, 255, 255, 0.2);
     }
   }
+
   ${device.mobile} {
     font-size: 1em;
   }
 `;
+
+const Anchor = Link.withComponent('a');
 
 class Navigation extends Component {
   state = {
@@ -182,6 +195,7 @@ class Navigation extends Component {
           <Link to="/nosotros">Sobre Nosotros</Link>
           <Link to="/servicios">Servicios</Link>
           {/* <Link to="/noticias">Noticias</Link> */}
+          <Anchor target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login">Consulta de resultados</Anchor>
           <Link to="/sucursales">Sucursales</Link>
         </LinksSection>
       </NavSection>

@@ -1,6 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { H3 } from '../Headers';
+import { device } from '../../utilities/device';
+import { gtag } from './../../utilities/gtag';
+
+function phoneNumberOne () {
+  gtag('config', 'AW-789445090/GGMwCJjkuYkBEOLzt_gC', {
+    'phone_conversion_number': '8183548491'
+  });
+}
+
+function phoneNumberTwo () {
+  gtag('config', 'AW-789445090/CtA7CIWvpIkBEOLzt_gC', {
+    'phone_conversion_number': '8183583957'
+  });
+}
 
 const Contacto = styled.div`
   display: flex;
@@ -36,6 +50,22 @@ const Email = Texto.extend`
   font-size: calc(1.2rem - 0.1vw);
 `;
 
+const PhoneLink = styled.a`
+  display: none;
+  color: #333;
+
+  ${device.tablet} {
+    display: initial;
+  }
+`;
+
+const DisappearingData = styled.span`
+  ${device.tablet} {
+    display: none;
+  }
+`;
+
+
 const ContactData = (props) => (
   <Contacto>
     <Titulo> Sucursal Matriz </Titulo>
@@ -44,8 +74,14 @@ const ContactData = (props) => (
     </div>
     <div>
       <Subtitulo> Teléfono </Subtitulo>
-      <Texto> 01 (81) 8354 8491 </Texto>
-      <TextoExt> 8358 3957 </TextoExt>
+      <Texto> 
+        <DisappearingData>01 (81) 8354 8491</DisappearingData>
+        <PhoneLink onClick={phoneNumberOne} href="tel:818-354-8419">01 (81) 8354 8491</PhoneLink> 
+      </Texto>
+      <TextoExt> 
+        <DisappearingData>8358 3957</DisappearingData>
+        <PhoneLink onClick={phoneNumberTwo} href="tel:818-358-3957">8358 3957</PhoneLink>
+      </TextoExt>
     </div>
     <div>
       <Subtitulo> E-mail </Subtitulo>
