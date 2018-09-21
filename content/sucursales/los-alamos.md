@@ -1,5 +1,5 @@
 ---
-title: Los Alamos
+title: Sucursal Los Alamos
 address: 'Hector Caballero #81D Col. Los Alamos, Apodaca, N.L'
 type: sucursales
 coords:
