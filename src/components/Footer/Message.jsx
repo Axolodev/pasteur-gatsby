@@ -44,10 +44,45 @@ const FormStatusList = {
   error: -1,
 };
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 class Message extends React.Component {
   state = {
     formStatus: FormStatusList.default,
+    telefono: '',
+    nombre: '',
+    email: '',
+    mensaje: '',
   };
+  
+  handleChange = (event) => {
+    const { target } = event;
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state
+      })
+    })
+      .then(() => {
+        alert("¡Muchas gracias! Tu mensaje ha sido enviado.");
+      })
+      .catch(error => alert(error));
+  }
 
   render() {
     return (
@@ -69,19 +104,19 @@ class Message extends React.Component {
           </p>
           <FieldLabel>
             <FieldName>Nombre</FieldName>
-            <Text />
+            <Text name="nombre" onChange={this.handleChange} />
           </FieldLabel>
           <FieldLabel>
             <FieldName>Teléfono</FieldName>
-            <Text />
+            <Text name="telefono" onChange={this.handleChange} />
           </FieldLabel>
           <FieldLabel data-optional>
             <FieldName>Email</FieldName>
-            <Text />
+            <Text name="email" onChange={this.handleChange} />
           </FieldLabel>
           <FieldLabel>
             <FieldName>Mensaje</FieldName>
-            <Text msg />
+            <Text name="mensaje" onChange={this.handleChange} msg />
           </FieldLabel>
           <Submit type="submit" value="Enviar" />
         </Form>
