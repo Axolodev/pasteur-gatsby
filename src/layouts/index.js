@@ -38,12 +38,8 @@ const Layout = ({ children, data }) => (
           }
         ]}
         script={[{
-            src:"https://identity.netlify.com/v1/netlify-identity-widget.js"
-          }, {
-            src: "https://www.googletagmanager.com/gtag/js?id=UA-125738292-1",
-            async: true
-          }
-        ]}
+          src:"https://identity.netlify.com/v1/netlify-identity-widget.js"
+        }]}
       />
       <Navbar />
       {children()}

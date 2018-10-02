@@ -6,6 +6,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-react-next',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,6 +28,13 @@ module.exports = {
         path: `${__dirname}/content/noticias`,
       },
     },
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "UA-125738292-1",
+        includeInDevelopment: false,
+      },
+    },
   ]
 }
