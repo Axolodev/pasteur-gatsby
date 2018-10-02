@@ -47,10 +47,3 @@ function createNewsPage({ path }, createPage) {
   })
 }
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  config.merge({
-    resolve: {
-      extensions: ['.json'],
-    }
-  })
-}

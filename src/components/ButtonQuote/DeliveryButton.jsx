@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import Link from 'gatsby-link';
 import { device } from '../../utilities/device';
-
 
 const ButtonCont = styled.div`
   color: ${props => props.theme.color.darkBlue};
@@ -46,7 +45,7 @@ const Text = styled.p`
   margin: auto 0px;
 `;
 
-const Button = styled(NavLink)`
+const Button = styled(Link)`
   background-color: ${props => props.theme.color.darkBlue};
   color: ${props => props.theme.color.white};
   text-transform: uppercase;
@@ -57,9 +56,9 @@ const Button = styled(NavLink)`
   border: none;
   text-decoration: none;
 
-  &:hover{
-      background-color: #405496;
-      cursor: pointer;
+  &:hover {
+    background-color: #405496;
+    cursor: pointer;
   }
 `;
 

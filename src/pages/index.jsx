@@ -6,6 +6,8 @@ import Public from '../components/PageHome/Public';
 import Intro from './../components/PageHome/Intro';
 import Slideshow from './../components/Slideshow';
 import quoteBackground from '../components/PageHome/assets/quote-bg.jpg';
+import AppLayout from './../components/AppLayout/index';
+import { graphql } from 'gatsby';
 
 const text = 'Comprometidos por el bienestar de tu familia.';
 
@@ -22,12 +24,10 @@ const SlideshowLayout = styled.div`
   position: relative;
 `;
 
-const Background = styled.div`
-
-`;
+const Background = styled.div``;
 
 const BgSlide = styled.div.attrs({
-  style: (props) => ({...props})
+  style: props => ({ ...props }),
 })`
   position: relative;
   display: flex;
@@ -37,41 +37,47 @@ const BgSlide = styled.div.attrs({
   justify-content: flex-end;
 `;
 
-const PageHome = ({data}) => {
-  const slides = data.slides.edges.map(({node}) => {
-    const {frontmatter: {img, title}} = node;
-    
+const PageHome = ({ data }) => {
+  const slides = data.slides.edges.map(({ node }) => {
+    const {
+      frontmatter: { img, title },
+    } = node;
+
     return {
       key: title,
-      background: `url('${img}') center`, 
+      background: `url('${img}') center`,
     };
   });
 
   return (
-    <Layout>
-      <SlideshowLayout>
-        <Slideshow 
-          items={slides}
-          defaultElementRender={(data) => <BgSlide {...data}/>}
-        />
-      </SlideshowLayout>
-      <Intro />
-      <Background>
-        <Public />
-        <ButtonQuote
-          quote={text}
-          background={`url(${quoteBackground}) center`}
-        />
-      </Background>
-    </Layout>
+    <AppLayout>
+      <Layout>
+        <SlideshowLayout>
+          <Slideshow
+            items={slides}
+            defaultElementRender={data => <BgSlide {...data} />}
+          />
+        </SlideshowLayout>
+        <Intro />
+        <Background>
+          <Public />
+          <ButtonQuote
+            quote={text}
+            background={`url(${quoteBackground}) center`}
+          />
+        </Background>
+      </Layout>
+    </AppLayout>
   );
-}
+};
 
 export default PageHome;
 
 export const pageQuery = graphql`
   query GetSlidesData {
-    slides: allMarkdownRemark(filter: {frontmatter: {type: {eq: "slide"}}}) {
+    slides: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "slide" } } }
+    ) {
       edges {
         node {
           frontmatter {

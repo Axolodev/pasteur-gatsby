@@ -6,6 +6,8 @@ import Layout from '../components/Layout';
 import { H1 } from '../components/Headers';
 import { HeaderSizes } from './../components/Headers';
 import { device } from '../utilities/device';
+import AppLayout from '../components/AppLayout';
+import { graphql } from 'gatsby';
 
 const ImageContainer = styled.div`
   flex: 1;
@@ -23,15 +25,15 @@ const FeaturedImage = styled.img`
 `;
 
 const PostDate = styled.time`
-  color: #AAA;
+  color: #aaa;
   padding: 1em 0;
 `;
 
 const Content = styled(ReactMarkdown)`
-  font-family: ${({theme}) => theme.fontFamily.main};
-  color: ${({theme}) => theme.color.black};
+  font-family: ${({ theme }) => theme.fontFamily.main};
+  color: ${({ theme }) => theme.color.black};
   margin-top: 1em;
-  
+
   > * {
     margin: 1em 0;
     line-height: 1.3em;
@@ -40,19 +42,19 @@ const Content = styled(ReactMarkdown)`
   > ul > li {
     padding: 0.5em 0;
   }
-  
+
   img {
     max-width: 100%;
   }
 
   a {
-    color: ${({theme}) => theme.color.darkBlue};
+    color: ${({ theme }) => theme.color.darkBlue};
   }
 
   h1 {
     font-size: ${HeaderSizes.h1};
   }
-  
+
   h2 {
     font-size: ${HeaderSizes.h2};
   }
@@ -60,27 +62,29 @@ const Content = styled(ReactMarkdown)`
   h3 {
     font-size: ${HeaderSizes.h3};
   }
-  
+
   h4 {
     font-size: ${HeaderSizes.h4};
   }
 `;
 
-function NewsEntry ({data}) {
+function NewsEntry({ data }) {
   const { newsEntryData } = data;
   const { frontmatter, rawMarkdownBody } = newsEntryData;
   const { date, image, title } = frontmatter;
 
   return (
-    <Layout>
-      <H1>{title}</H1>
-      <PostDate>{date}</PostDate>
-      <ImageContainer>
-        <FeaturedImage src={image} />
-      </ImageContainer>
-      <Content source={rawMarkdownBody} />
-    </Layout>
-  )
+    <AppLayout>
+      <Layout>
+        <H1>{title}</H1>
+        <PostDate>{date}</PostDate>
+        <ImageContainer>
+          <FeaturedImage src={image} />
+        </ImageContainer>
+        <Content source={rawMarkdownBody} />
+      </Layout>
+    </AppLayout>
+  );
 }
 
 export default NewsEntry;
@@ -88,10 +92,7 @@ export default NewsEntry;
 export const query = graphql`
   query GetNewsEntryByRoute($route: String!) {
     newsEntryData: markdownRemark(
-      frontmatter: {
-        type: {eq: "news"},
-        path: {eq: $route}
-      }
+      frontmatter: { type: { eq: "news" }, path: { eq: $route } }
     ) {
       rawMarkdownBody
       frontmatter {

@@ -1,9 +1,9 @@
 export function gtag() {
-  if(!window) return;
+  if (!window) return;
 
-  if(!window.dataLayer) {
+  if (!window.dataLayer) {
     window.dataLayer = window.dataLayer || [];
   }
 
-  dataLayer.push(arguments);
+  window.dataLayer.push(arguments);
 }

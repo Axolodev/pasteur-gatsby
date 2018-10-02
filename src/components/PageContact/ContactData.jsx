@@ -4,15 +4,15 @@ import { H3 } from '../Headers';
 import { device } from '../../utilities/device';
 import { gtag } from './../../utilities/gtag';
 
-function phoneNumberOne () {
+function phoneNumberOne() {
   gtag('config', 'AW-789445090/GGMwCJjkuYkBEOLzt_gC', {
-    'phone_conversion_number': '8183548491'
+    phone_conversion_number: '8183548491',
   });
 }
 
-function phoneNumberTwo () {
+function phoneNumberTwo() {
   gtag('config', 'AW-789445090/CtA7CIWvpIkBEOLzt_gC', {
-    'phone_conversion_number': '8183583957'
+    phone_conversion_number: '8183583957',
   });
 }
 
@@ -21,7 +21,7 @@ const Contacto = styled.div`
   flex-direction: column;
   font-weight: 200;
   width: 100%;
-  font-family: ${({theme}) => theme.fontFamily.main};
+  font-family: ${({ theme }) => theme.fontFamily.main};
 `;
 
 const Titulo = H3.extend`
@@ -65,22 +65,28 @@ const DisappearingData = styled.span`
   }
 `;
 
-
-const ContactData = (props) => (
+const ContactData = props => (
   <Contacto>
     <Titulo> Sucursal Matriz </Titulo>
     <div>
-      <Texto> Av. Chapultepec 1922-A Col. Buenos Aires. Monterrey, Nuevo León </Texto>
+      <Texto>
+        {' '}
+        Av. Chapultepec 1922-A Col. Buenos Aires. Monterrey, Nuevo León{' '}
+      </Texto>
     </div>
     <div>
       <Subtitulo> Teléfono </Subtitulo>
-      <Texto> 
+      <Texto>
         <DisappearingData>01 (81) 8354 8491</DisappearingData>
-        <PhoneLink onClick={phoneNumberOne} href="tel:818-354-8419">01 (81) 8354 8491</PhoneLink> 
+        <PhoneLink onClick={phoneNumberOne} href="tel:818-354-8491">
+          01 (81) 8354 8491
+        </PhoneLink>
       </Texto>
-      <TextoExt> 
+      <TextoExt>
         <DisappearingData>8358 3957</DisappearingData>
-        <PhoneLink onClick={phoneNumberTwo} href="tel:818-358-3957">8358 3957</PhoneLink>
+        <PhoneLink onClick={phoneNumberTwo} href="tel:818-358-3957">
+          8358 3957
+        </PhoneLink>
       </TextoExt>
     </div>
     <div>

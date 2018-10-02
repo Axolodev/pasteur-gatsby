@@ -11,9 +11,9 @@ const Layout = styled.footer`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: min-content;
   grid-template-areas:
-    "Motto Motto ."
-    "Contact Schedule DM"
-    "Rights . Website";
+    'Motto Motto .'
+    'Contact Schedule DM'
+    'Rights . Website';
   box-sizing: border-box;
   height: auto;
   padding: 2em 4.5em;
@@ -31,24 +31,25 @@ const Layout = styled.footer`
     grid-row-gap: 2em;
     padding: 2em;
     grid-template-areas:
-      "Motto Motto"
-      "Contact Schedule"
-      "DM DM"
-      "Rights Website";
+      'Motto Motto'
+      'Contact Schedule'
+      'DM DM'
+      'Rights Website';
   }
 
   ${device.mobile} {
     grid-row-gap: 1em;
     padding: 1em;
     grid-template-areas:
-      "Motto Motto"
-      "Contact Contact"
-      "Schedule Schedule"
-      "DM DM"
-      "Rights Website";
+      'Motto Motto'
+      'Contact Contact'
+      'Schedule Schedule'
+      'DM DM'
+      'Rights Website';
   }
 
-  p, li {
+  p,
+  li {
     font-size: 0.75rem;
   }
 `;

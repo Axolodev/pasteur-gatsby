@@ -9,7 +9,7 @@ const Div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`; 
+`;
 
 /**
  * CHANGE FONT FAMILY
@@ -22,7 +22,7 @@ const Text = styled.p`
   width: 50%;
 `;
 
-const Quote = ({text}) => (
+const Quote = ({ text }) => (
   <Div>
     <Text>"{text}"</Text>
   </Div>

@@ -6,6 +6,7 @@ import ButtonQuote from '../components/ButtonQuote';
 import _Layout, { withLayoutPadding } from '../components/Layout';
 import quoteBackground from '../components/PageAbout/assets/appointment.jpg';
 import { H1 } from '../components/Headers';
+import AppLayout from '../components/AppLayout';
 
 const Layout = _Layout.extend`
   display: flex;
@@ -36,16 +37,14 @@ const Content = withLayoutPadding(styled(ReactMarkdown)`
   }
 `);
 
-
 const PageAbout = () => (
-  <Layout fluid>
-    <CustomH1>Sobre Nosotros</CustomH1>
-    <Content source={input} />
-    <ButtonQuote
-      background={`url(${quoteBackground}) center`}
-      quote={text}
-    />
-  </Layout>
+  <AppLayout>
+    <Layout fluid>
+      <CustomH1>Sobre Nosotros</CustomH1>
+      <Content source={input} />
+      <ButtonQuote background={`url(${quoteBackground}) center`} quote={text} />
+    </Layout>
+  </AppLayout>
 );
 
 export default PageAbout;

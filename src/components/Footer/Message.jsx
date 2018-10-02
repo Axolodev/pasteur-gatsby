@@ -11,10 +11,10 @@ const FieldLabel = styled.label`
   flex-direction: column;
 
   &[data-optional] > span::after {
-    content: "opcional";
+    content: 'opcional';
     margin-left: 1em;
     font-size: 0.9em;
-    color: ${({theme}) => theme.color.greyBlue}
+    color: ${({ theme }) => theme.color.greyBlue};
   }
 `;
 
@@ -28,32 +28,31 @@ const Text = styled.textarea`
   margin: 0 0 1em 0;
   resize: none;
   background-color: ${props => props.theme.color.greyBlue};
-  height: ${props => props.msg ? '4em' : '1.5em' };
+  height: ${props => (props.msg ? '4em' : '1.5em')};
   resize: none;
   font-family: ${props => props.theme.fontFamily.main};
   font-size: 0.75em;
   color: ${props => props.theme.color.white};
 `;
 
-const Submit = styled.input`
-`;
+const Submit = styled.input``;
 
 const FormStatusList = {
   default: 0,
   sending: 1,
   sent: 2,
-  error: -1
+  error: -1,
 };
 
 class Message extends React.Component {
   state = {
-    formStatus: FormStatusList.default
-  }
+    formStatus: FormStatusList.default,
+  };
 
   render() {
     return (
       <React.Fragment>
-        <Form 
+        <Form
           name="contacto"
           method="post"
           action="/"
@@ -64,7 +63,7 @@ class Message extends React.Component {
           <input type="hidden" name="form-name" value="contacto" />
           <p hidden>
             <label>
-              Don’t fill this out:{" "}
+              Don’t fill this out:{' '}
               <input name="bot-field" onChange={this.handleChange} />
             </label>
           </p>
@@ -84,7 +83,7 @@ class Message extends React.Component {
             <FieldName>Mensaje</FieldName>
             <Text msg />
           </FieldLabel>
-          <Submit type='submit' value='Enviar' />
+          <Submit type="submit" value="Enviar" />
         </Form>
       </React.Fragment>
     );

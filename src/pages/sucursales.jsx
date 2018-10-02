@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
 import ContactData from '../components/PageContact/ContactData';
 import Delivery from '../components/PageContact/Delivery';
@@ -7,6 +8,7 @@ import Map from '../components/PageContact/Map';
 import Locations from '../components/PageContact/Locations';
 import _Layout from '../components/Layout';
 import { device } from '../utilities/device';
+import AppLayout from './../components/AppLayout/index';
 
 const Container = _Layout.extend`
   display: grid;
@@ -54,42 +56,45 @@ const SucursalesContainer = styled(Locations)`
   grid-area: Sucursales;
 `;
 
-
-const PageContact = ({data}) => {
+const PageContact = ({ data }) => {
   const { matrixLocation } = data;
-  const allLocationsData = data.allLocations.edges.map(({node: {frontmatter}}) => ({...frontmatter}));
-  const locationCoords = allLocationsData.map(({coords}, index) => ({
+  const allLocationsData = data.allLocations.edges.map(
+    ({ node: { frontmatter } }) => ({ ...frontmatter })
+  );
+  const locationCoords = allLocationsData.map(({ coords }, index) => ({
     id: index,
     latitude: parseFloat(coords.latitude),
-    longitude: parseFloat(coords.longitude)
+    longitude: parseFloat(coords.longitude),
   }));
 
   return (
-    <div>
-      <Container>
-        <Contact matrixLocation={matrixLocation}/>
-        <Del />
-        <MapaCont locations={locationCoords}/>
-        <SucursalesContainer locations={allLocationsData}/>
-      </Container>
-    </div>
+    <AppLayout>
+      <div>
+        <Container>
+          <Contact matrixLocation={matrixLocation} />
+          <Del />
+          <MapaCont locations={locationCoords} />
+          <SucursalesContainer locations={allLocationsData} />
+        </Container>
+      </div>
+    </AppLayout>
   );
-}
+};
 
 export default PageContact;
 
 export const pageQuery = graphql`
   query CoolQuery {
-    matrixLocation: markdownRemark(frontmatter: {main: {eq: true}}) {
+    matrixLocation: markdownRemark(frontmatter: { main: { eq: true } }) {
       frontmatter {
         title
         address
         phone
       }
     }
-  
-    allLocations: allMarkdownRemark(filter: 
-      {frontmatter: {type: {eq: "sucursales"}}}
+
+    allLocations: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "sucursales" } } }
     ) {
       edges {
         node {

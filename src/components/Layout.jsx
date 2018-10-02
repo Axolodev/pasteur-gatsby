@@ -14,7 +14,7 @@ export const withLayoutPadding = component => styled(component)`
 `;
 
 const Layout = withLayoutPadding('main').extend`
-  padding: 13rem ${({fluid}) => fluid ? 0 : '3rem'};
+  padding: 13rem ${({ fluid }) => (fluid ? 0 : '3rem')};
   padding-bottom: 4em;
   display: flex;
   flex-direction: column;

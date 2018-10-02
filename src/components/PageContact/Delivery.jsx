@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -24,11 +23,10 @@ const Text = styled.p`
   line-height: 1.2em;
   color: #333;
   padding-bottom: 30px;
-  font-family: ${({theme}) => theme.fontFamily.main};
+  font-family: ${({ theme }) => theme.fontFamily.main};
 `;
 
-
-const Delivery = (props) => (
+const Delivery = props => (
   <Container className={props.className}>
     <Title> Servicio a Domicilio </Title>
     <Text> Siempre accesibles, siempre cerca de ti. Contáctanos ahora. </Text>

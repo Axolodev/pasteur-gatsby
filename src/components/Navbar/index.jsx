@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import Link from 'gatsby-link';
 
 import logo from './logo.svg';
 import { device } from '../../utilities/device';
@@ -10,25 +10,30 @@ const NavLayout = styled.nav`
   z-index: 1;
   display: grid;
   grid-template: repeat(4, minmax(2.5vh, 47px)) / 3fr 3fr;
-  grid-template-areas: 
-    "contact contact"
-    "logo nav"
-    "logo nav"
-    ". .";
+  grid-template-areas:
+    'contact contact'
+    'logo nav'
+    'logo nav'
+    '. .';
   align-items: center;
   justify-content: space-evenly;
   font-family: ${props => props.theme.fontFamily.main};
   position: absolute;
   width: 100%;
-  background: linear-gradient(180deg, rgba(44,68,134,1) 0%, rgba(5,6,255,0) 100%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(44, 68, 134, 1) 0%,
+    rgba(5, 6, 255, 0) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 
   ${device.laptop} {
     grid-template-columns: 2fr 3fr;
   }
-  
+
   ${device.tablet} {
     grid-template-rows: minmax(5vh, 6em);
-    grid-template-areas: "logo nav";
+    grid-template-areas: 'logo nav';
   }
 `;
 
@@ -39,7 +44,7 @@ const ContactSection = styled.div`
   justify-content: flex-end;
   height: 100%;
   box-shadow: inset 0px -2px 0px -1px white;
-  
+
   ${device.tablet} {
     display: none;
   }
@@ -132,7 +137,6 @@ const LogoSection = styled.div`
   }
 `;
 
-
 const ExternalLink = styled.a`
   text-decoration: none;
   height: 100%;
@@ -149,7 +153,7 @@ const Img = styled.img`
   ${device.laptop} {
     width: 15em;
   }
-  
+
   ${device.mobile} {
     min-width: 9em;
   }
@@ -178,17 +182,25 @@ const Navbar = () => (
       <SocialsSection>
         <div>contacto@pasteur.mx</div>
         <SocialIcons>
-          <ExternalLink target="_blank" href="https://www.facebook.com/laboratoriospasteuranalisisclinicos">
+          <ExternalLink
+            target="_blank"
+            href="https://www.facebook.com/laboratoriospasteuranalisisclinicos"
+          >
             <I className="fab fa-facebook-square" />
           </ExternalLink>
-          <ExternalLink target="_blank" href="https://www.instagram.com/laboratoriospasteur">
+          <ExternalLink
+            target="_blank"
+            href="https://www.instagram.com/laboratoriospasteur"
+          >
             <I className="fab fa-instagram" />
           </ExternalLink>
         </SocialIcons>
       </SocialsSection>
     </ContactSection>
     <LogoSection>
-      <NavLink to="/"><Img src={logo} alt="logo" /></NavLink>
+      <Link to="/">
+        <Img src={logo} alt="logo" />
+      </Link>
     </LogoSection>
     <Navigation />
   </NavLayout>

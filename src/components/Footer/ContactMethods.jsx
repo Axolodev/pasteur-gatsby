@@ -4,15 +4,15 @@ import styled from 'styled-components';
 import { device } from '../../utilities/device';
 import { gtag } from './../../utilities/gtag';
 
-function phoneNumberOne () {
+function phoneNumberOne() {
   gtag('config', 'AW-789445090/GGMwCJjkuYkBEOLzt_gC', {
-    'phone_conversion_number': '8183548491'
+    phone_conversion_number: '8183548491',
   });
 }
 
-function phoneNumberTwo () {
+function phoneNumberTwo() {
   gtag('config', 'AW-789445090/CtA7CIWvpIkBEOLzt_gC', {
-    'phone_conversion_number': '8183583957'
+    phone_conversion_number: '8183583957',
   });
 }
 
@@ -57,26 +57,33 @@ const ContactMethods = () => (
   <ContactList>
     <ContactItem>
       <p>Dirección</p>
-      <p>Av. Chapultepec 1922-A<br/>
-      Col. Buenos Aires, Monterrey, Nuevo León</p>
+      <p>
+        Av. Chapultepec 1922-A
+        <br />
+        Col. Buenos Aires, Monterrey, Nuevo León
+      </p>
     </ContactItem>
-    <hr/>
+    <hr />
     <ContactItem>
       <p>Teléfono</p>
       <p>
         <DisappearingData>01 (81) 8354 8491</DisappearingData>
-        <PhoneLink onClick={phoneNumberOne} href="tel:818-354-8419">01 (81) 8354 8491</PhoneLink>
-        <br/>
+        <PhoneLink onClick={phoneNumberOne} href="tel:818-354-8491">
+          01 (81) 8354 8491
+        </PhoneLink>
+        <br />
         <DisappearingData>8358 3957</DisappearingData>
-        <PhoneLink onClick={phoneNumberTwo} href="tel:818-358-3957">8358 3957</PhoneLink>
+        <PhoneLink onClick={phoneNumberTwo} href="tel:818-358-3957">
+          8358 3957
+        </PhoneLink>
       </p>
     </ContactItem>
-    <hr/>
+    <hr />
     <ContactItem>
       <p>Email</p>
       <p>contacto@pasteur.mx</p>
     </ContactItem>
-    <hr/>
+    <hr />
     <ContactItem>
       <p>Facebook</p>
       <p>laboratoriospasteuranalisisclinicos</p>

@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { NodeGroup } from 'react-move';
 
 const defaultTimeBetweenSlides = 999999;
 
 const Controllers = styled.div`
-  position: absolute; 
+  position: absolute;
   display: flex;
   bottom: 0;
   height: 10vh;
@@ -21,9 +21,9 @@ const FullSizeDiv = styled.div`
 `;
 
 const SlideButton = styled.div.attrs({
-  style: ({selected}) => ({
-    background: `${selected ? 'white' : 'transparent'}`
-  })
+  style: ({ selected }) => ({
+    background: `${selected ? 'white' : 'transparent'}`,
+  }),
 })`
   margin: 0 2px;
   width: 0.8rem;
@@ -35,13 +35,14 @@ const SlideButton = styled.div.attrs({
 
 class Slideshow extends Component {
   state = {
-    currentSlide: 0
-  }
+    currentSlide: 0,
+  };
 
   componentDidMount() {
-    this.timeBetweenSlides = this.props.timeBetweenSlides || defaultTimeBetweenSlides;
+    this.timeBetweenSlides =
+      this.props.timeBetweenSlides || defaultTimeBetweenSlides;
     // Set timer and store it
-    this.slideTimer = setInterval(this.nextSlide, this.timeBetweenSlides); 
+    this.slideTimer = setInterval(this.nextSlide, this.timeBetweenSlides);
   }
 
   componentWillUnmount() {
@@ -51,41 +52,44 @@ class Slideshow extends Component {
 
   nextSlide = () => {
     // Advance slide counter and set it
-    const currentSlide = (this.state.currentSlide + 1) % this.props.items.length;
-    this.setState({currentSlide});
-  }
+    const currentSlide =
+      (this.state.currentSlide + 1) % this.props.items.length;
+    this.setState({ currentSlide });
+  };
 
   previousSlide = () => {
-    // Make counter go back one slide. 
-    const currentSlide = (this.state.currentSlide + this.props.items.length - 1) % this.props.items.length;
-    this.setState({currentSlide});
-  }
+    // Make counter go back one slide.
+    const currentSlide =
+      (this.state.currentSlide + this.props.items.length - 1) %
+      this.props.items.length;
+    this.setState({ currentSlide });
+  };
 
   /**
    * Reset slide-changing timer
    */
   resetTimer = () => {
     // Clear interval if it exists, then create it again
-    if(!this.slideTimer) return;
+    if (!this.slideTimer) return;
 
     clearInterval(this.slideTimer);
-    this.slideTimer = setInterval(this.nextSlide, this.timeBetweenSlides);     
-  }
+    this.slideTimer = setInterval(this.nextSlide, this.timeBetweenSlides);
+  };
 
-  setCurrentSlide = (slideIndex) => {
+  setCurrentSlide = slideIndex => {
     this.setState({
-      currentSlide: slideIndex
+      currentSlide: slideIndex,
     });
     this.resetTimer();
-  }
+  };
 
   render() {
-    
     const SlideButtons = this.props.items.map((_, index) => (
-      <SlideButton 
+      <SlideButton
         selected={index === this.state.currentSlide}
         key={index}
-        onClick={() => this.setCurrentSlide(index)} />
+        onClick={() => this.setCurrentSlide(index)}
+      />
     ));
 
     const currentItem = this.props.items[this.state.currentSlide];
@@ -93,13 +97,15 @@ class Slideshow extends Component {
     return (
       <FullSizeDiv>
         <NodeGroup
-          data={[{
-            // Required. Identifier for each element
-            key: currentItem.key,
-            // Spread remaining props
-            ...currentItem
-          }]}
-          keyAccessor={(c) => c.key}
+          data={[
+            {
+              // Required. Identifier for each element
+              key: currentItem.key,
+              // Spread remaining props
+              ...currentItem,
+            },
+          ]}
+          keyAccessor={c => c.key}
           start={() => ({
             opacity: [0],
             translateY: [-10],
@@ -116,28 +122,31 @@ class Slideshow extends Component {
             opacity: [0],
             translateY: [10],
             timing: { duration: 200 },
-          })}>
-            {(nodes) => (
-              <FullSizeDiv>
-                {nodes.map(({key, data, state: { opacity } }) => (
-                  <div
-                    key={key}
-                    style={{
-                      position: 'absolute',
-                      width: "100%",
-                      height: "100%",
-                      top: 0,
-                      left: 0,
-                      opacity,
-                    }}>
-                    {data.render ? data.render(data) : this.props.defaultElementRender(data)}
-                  </div>
-                ))}
-              </FullSizeDiv>)} 
+          })}
+        >
+          {nodes => (
+            <FullSizeDiv>
+              {nodes.map(({ key, data, state: { opacity } }) => (
+                <div
+                  key={key}
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    top: 0,
+                    left: 0,
+                    opacity,
+                  }}
+                >
+                  {data.render
+                    ? data.render(data)
+                    : this.props.defaultElementRender(data)}
+                </div>
+              ))}
+            </FullSizeDiv>
+          )}
         </NodeGroup>
-        <Controllers>
-          {SlideButtons}
-        </Controllers>
+        <Controllers>{SlideButtons}</Controllers>
       </FullSizeDiv>
     );
   }

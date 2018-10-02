@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { globalTheme } from '../layouts/themes';
+import theme from '../components/AppLayout/themes';
 
 export const HeaderSizes = {
   h1: '2.2em',
@@ -9,10 +9,9 @@ export const HeaderSizes = {
 };
 
 const withHeaderStyles = component => styled(component)`
-  font-family: ${globalTheme.fontFamily.main};
-  color: ${globalTheme.color.black};
+  font-family: ${theme.fontFamily.main};
+  color: ${theme.color.black};
 `;
-
 
 export const H1 = withHeaderStyles('h1').extend`
   font-size: ${HeaderSizes.h1};

@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import { graphql } from 'gatsby';
 
 import Layout from './../components/Layout';
 import { H1, H3 } from '../components/Headers';
 import { device } from '../utilities/device';
+import AppLayout from '../components/AppLayout';
 
 const NewsLayout = styled.section`
   display: grid;
@@ -26,7 +28,7 @@ const NewsLayout = styled.section`
 
 const HighlightedNews = styled(Link)`
   position: relative;
-  background-image: url("${(props) => props["data-image"]}");
+  background-image: url("${props => props['data-image']}");
   background-size: cover;
   background-position: center;
 `;
@@ -37,7 +39,7 @@ const NewsHeader = styled.span`
   position: absolute;
   box-sizing: border-box;
   padding: 1em;
-  font-family: ${({theme}) => theme.fontFamily.main};
+  font-family: ${({ theme }) => theme.fontFamily.main};
   width: 100%;
   bottom: 0;
   left: 0;
@@ -68,85 +70,93 @@ const SecondaryNews = HighlightedNews.extend`
   background-color: darkred;
 `;
 
-const OtherNewsSection = styled.section`
-
-`;
+const OtherNewsSection = styled.section``;
 
 const OtherNews = styled.ul`
   margin-top: 0.5em;
 `;
 
 const OtherNewsSingle = styled.li`
-  font-family: ${({theme}) => theme.fontFamily.main};
+  font-family: ${({ theme }) => theme.fontFamily.main};
   padding: 0.5em 0;
   padding-left: 1em;
 `;
 
 const NewsLink = styled(Link)`
-  color: ${({theme}) => theme.color.darkBlue};
+  color: ${({ theme }) => theme.color.darkBlue};
 `;
 
 function getCleanNewsDataFromEdges(newsEdges) {
-  return newsEdges.map(({
-    node: {
-      frontmatter: {
-        title,
-        date,
-        path,
-        image
-      }, 
-      excerpt
-    }
-  }) => ({
-    title,
-    date,
-    path: path.startsWith('/') ? path : `/${path}`,
-    image,
-    excerpt
-  }));
+  return newsEdges.map(
+    ({
+      node: {
+        frontmatter: { title, date, path, image },
+        excerpt,
+      },
+    }) => ({
+      title,
+      date,
+      path: path.startsWith('/') ? path : `/${path}`,
+      image,
+      excerpt,
+    })
+  );
 }
 
-function Noticias ({data: {
-  mostRecentNews,
-  allOtherNews,
-  kindOfRecentButNotNewestNews
-}}) {
+function Noticias({
+  data: { mostRecentNews, allOtherNews, kindOfRecentButNotNewestNews },
+}) {
   const mostRecentNewsData = getCleanNewsDataFromEdges(mostRecentNews.edges)[0];
-  const kornnNewsData = getCleanNewsDataFromEdges(kindOfRecentButNotNewestNews.edges);
+  const kornnNewsData = getCleanNewsDataFromEdges(
+    kindOfRecentButNotNewestNews.edges
+  );
   const otherNewsData = getCleanNewsDataFromEdges(allOtherNews.edges);
 
   return (
-    <Layout>
-      <H1>Noticias</H1>
-      <NewsLayout>
-        <MainNews to={`/noticias${mostRecentNewsData.path}`} data-image={mostRecentNewsData.image}>
-          <MainNewsHeader>{mostRecentNewsData.title}</MainNewsHeader>
-        </MainNews>
-        {kornnNewsData.length && (
-          <SecondaryNews to={`/noticias${kornnNewsData[0].path}`} data-image={kornnNewsData[0].image}>
-            <NewsHeader>{kornnNewsData[0].title}</NewsHeader>
-          </SecondaryNews>
-        )}
-        {kornnNewsData.length === 2 && (
-          <SecondaryNews to={`/noticias${kornnNewsData[1].path}`} data-image={kornnNewsData[1].image}>
-            <NewsHeader>{kornnNewsData[1].title}</NewsHeader>
-          </SecondaryNews> 
-        )}
-        {otherNewsData.length > 0 && (
-          <OtherNewsSection>
-            <H3>Otras noticias</H3>
-            <OtherNews>
-              {otherNewsData.map(data => (
-                <OtherNewsSingle key={data.title}>
-                  <NewsLink to={`/noticias${data.path}`}>{data.title}</NewsLink>
-                </OtherNewsSingle>
-              ))}
-            </OtherNews>
-          </OtherNewsSection>
-        )}
-      </NewsLayout>
-    </Layout>
-  )
+    <AppLayout>
+      <Layout>
+        <H1>Noticias</H1>
+        <NewsLayout>
+          <MainNews
+            to={`/noticias${mostRecentNewsData.path}`}
+            data-image={mostRecentNewsData.image}
+          >
+            <MainNewsHeader>{mostRecentNewsData.title}</MainNewsHeader>
+          </MainNews>
+          {kornnNewsData.length && (
+            <SecondaryNews
+              to={`/noticias${kornnNewsData[0].path}`}
+              data-image={kornnNewsData[0].image}
+            >
+              <NewsHeader>{kornnNewsData[0].title}</NewsHeader>
+            </SecondaryNews>
+          )}
+          {kornnNewsData.length === 2 && (
+            <SecondaryNews
+              to={`/noticias${kornnNewsData[1].path}`}
+              data-image={kornnNewsData[1].image}
+            >
+              <NewsHeader>{kornnNewsData[1].title}</NewsHeader>
+            </SecondaryNews>
+          )}
+          {otherNewsData.length > 0 && (
+            <OtherNewsSection>
+              <H3>Otras noticias</H3>
+              <OtherNews>
+                {otherNewsData.map(data => (
+                  <OtherNewsSingle key={data.title}>
+                    <NewsLink to={`/noticias${data.path}`}>
+                      {data.title}
+                    </NewsLink>
+                  </OtherNewsSingle>
+                ))}
+              </OtherNews>
+            </OtherNewsSection>
+          )}
+        </NewsLayout>
+      </Layout>
+    </AppLayout>
+  );
 }
 
 export default Noticias;
@@ -160,31 +170,31 @@ export const query = graphql`
           path
           image
         }
-      } 
+      }
     }
   }
-    
+
   query AllBlogEntries {
-    mostRecentNews: allMarkdownRemark (
-      sort: {fields: [frontmatter___date], order: DESC},
-      filter: {frontmatter: {type: {eq: "news"}}},
+    mostRecentNews: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "news" } } }
       limit: 1
     ) {
       ...BlogEntryData
     }
 
-    kindOfRecentButNotNewestNews: allMarkdownRemark (
-      sort: {fields: [frontmatter___date], order: DESC},
-      filter: {frontmatter: {type: {eq: "news"}}},
-      skip: 1,
+    kindOfRecentButNotNewestNews: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "news" } } }
+      skip: 1
       limit: 2
     ) {
       ...BlogEntryData
     }
 
-    allOtherNews: allMarkdownRemark (
-      sort: {fields: [frontmatter___date], order: DESC},
-      filter: {frontmatter: {type: {eq: "news"}}},
+    allOtherNews: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "news" } } }
       skip: 3
     ) {
       ...BlogEntryData

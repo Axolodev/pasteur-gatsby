@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps';
 
 import mapIcon from './assets/map-icon.png';
 
@@ -10,25 +15,26 @@ const Div = styled.div`
 `;
 
 class Map extends Component {
-
   render() {
-    const MyMapComponent = withScriptjs(withGoogleMap(() => (
-      <GoogleMap
-        defaultZoom={11}
-        defaultCenter={{ lat: 25.645376, lng: -100.191684 }}
-      >
-        {this.props.locations.map((sucursal, index) => (
-          <Marker
-            key={index}
-            icon={mapIcon}
-            position={{ 
-              lat: sucursal.latitude, 
-              lng: sucursal.longitude
-            }}
-          />
-        ))}
-      </GoogleMap>
-    )));
+    const MyMapComponent = withScriptjs(
+      withGoogleMap(() => (
+        <GoogleMap
+          defaultZoom={11}
+          defaultCenter={{ lat: 25.645376, lng: -100.191684 }}
+        >
+          {this.props.locations.map((sucursal, index) => (
+            <Marker
+              key={index}
+              icon={mapIcon}
+              position={{
+                lat: sucursal.latitude,
+                lng: sucursal.longitude,
+              }}
+            />
+          ))}
+        </GoogleMap>
+      ))
+    );
 
     return (
       <Div className={this.props.className}>
@@ -40,7 +46,7 @@ class Map extends Component {
           ref={this.container}
         />
       </Div>
-    )
+    );
   }
 }
 

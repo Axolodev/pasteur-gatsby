@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import _Link from 'gatsby-link';
 import styled from 'styled-components';
 import { device } from '../../utilities/device';
 
@@ -17,7 +17,9 @@ const NavSection = styled.div`
 
   ${device.tablet} {
     justify-content: flex-end;
-    ${({open}) => open && `
+    ${({ open }) =>
+      open &&
+      `
       position: fixed;
       width: 100vw;
       height: 100vh;
@@ -33,20 +35,19 @@ const NavSection = styled.div`
 `;
 
 const MenuButtonSection = styled.div.attrs({
-  style: ({open}) => ({
-    paddingRight: open ? '1em' : 0
-  })
+  style: ({ open }) => ({
+    paddingRight: open ? '1em' : 0,
+  }),
 })`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
   height: 6em;
-  
+
   ${device.tablet} {
     width: 100%;
   }
-
 `;
 
 const MenuButton = styled.div`
@@ -58,7 +59,7 @@ const MenuButton = styled.div`
 
   ${device.tablet} {
     display: flex;
-  } 
+  }
 
   ${device.mobile} {
     height: 20px;
@@ -79,21 +80,21 @@ const MenuButtonBar = styled.span`
 `;
 
 const BarOne = MenuButtonBar.extend.attrs({
-  style: ({open}) => ({
-    transform: `rotate(${open ? '45deg': 0})`
-  })
+  style: ({ open }) => ({
+    transform: `rotate(${open ? '45deg' : 0})`,
+  }),
 })``;
 
 const BarTwo = MenuButtonBar.extend.attrs({
-  style: ({open}) => ({
-    opacity: open ? 0 : 1
-  })
+  style: ({ open }) => ({
+    opacity: open ? 0 : 1,
+  }),
 })``;
 
 const BarThree = MenuButtonBar.extend.attrs({
-  style: ({open}) => ({
-    transform: `rotate(${open ? '-45deg': 0})`
-  })
+  style: ({ open }) => ({
+    transform: `rotate(${open ? '-45deg' : 0})`,
+  }),
 })``;
 
 const LinksSection = styled.div`
@@ -118,21 +119,23 @@ const LinksSection = styled.div`
     padding-right: 1em;
     justify-content: flex-start;
     flex-direction: column;
-    ${({open}) => open && `
+    ${({ open }) =>
+      open &&
+      `
       display: flex;
-    `}
+    `};
   }
 `;
 
-const Link = styled(NavLink)`
+const Link = styled(_Link)`
   text-decoration: none;
   font-size: 0.8rem;
-	font-family: ${props => props.theme.fontFamily.main};
+  font-family: ${props => props.theme.fontFamily.main};
   text-transform: uppercase;
   color: white;
   text-align: center;
   margin: 0 0.75em;
-  
+
   &:visited {
     text-decoration: none;
   }
@@ -163,22 +166,22 @@ const Anchor = Link.withComponent('a');
 
 class Navigation extends Component {
   state = {
-    open: false
-  }
+    open: false,
+  };
 
   toggleMenu = () => {
     this.setState(() => {
       return {
-        open: !this.state.open
+        open: !this.state.open,
       };
     });
-  }
+  };
 
   closeMenu = () => {
     this.setState({
       open: false,
     });
-  }
+  };
 
   render() {
     return (
@@ -190,12 +193,17 @@ class Navigation extends Component {
             <BarThree open={this.state.open} />
           </MenuButton>
         </MenuButtonSection>
-        <LinksSection onClick={() => this.closeMenu()} open={this.state.open} >
+        <LinksSection onClick={() => this.closeMenu()} open={this.state.open}>
           <Link to="/">Inicio</Link>
           <Link to="/nosotros">Sobre Nosotros</Link>
           <Link to="/servicios">Servicios</Link>
           {/* <Link to="/noticias">Noticias</Link> */}
-          <Anchor target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login">Consulta de resultados</Anchor>
+          <Anchor
+            target="_blank"
+            href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login"
+          >
+            Consulta de resultados
+          </Anchor>
           <Link to="/sucursales">Sucursales</Link>
         </LinksSection>
       </NavSection>

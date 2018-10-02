@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import Link from 'gatsby-link';
 
-import tecnologiasSVG from './icons/tecnologia.svg';
 import urgencia from './icons/urgencia.png';
 import domicilioIcon from './icons/domicilio.png';
 import ubicacionSVG from './icons/ubicacion.svg';
@@ -20,10 +19,10 @@ const Compromise = styled.div`
 
   ${device.tablet} {
     flex-direction: column;
-  }  
+  }
 `;
 
-const TextBlock = styled(NavLink)`
+const TextBlock = styled(Link)`
   color: white;
   background: ${props => props.backgroundcolor};
   display: flex;
@@ -136,7 +135,7 @@ const ValuCardIconContainer = styled.div`
   height: 120px;
   max-width: 120px;
   max-height: 120px;
-  background: ${({theme}) => theme.color.lightBlue};
+  background: ${({ theme }) => theme.color.lightBlue};
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -152,7 +151,7 @@ const ValueCardIcon = styled.img`
   width: 100%;
   max-width: 120px;
   height: 120px;
-  background: ${({theme}) => theme.color.lightBlue};
+  background: ${({ theme }) => theme.color.lightBlue};
   border-radius: 100%;
 `;
 
@@ -170,34 +169,59 @@ const Intro = () => (
   <Section>
     <Compromise>
       <HideableTextBlock to="/nosotros" backgroundcolor="#2c4486">
-        Compromiso con<br/>nuestros pacientes
+        Compromiso con
+        <br />
+        nuestros pacientes
       </HideableTextBlock>
-      <TextBlock to="#" backgroundcolor="#1995c9">
-        Consulta nuestra<br/>lista de servicios
+      <TextBlock to="/servicios" backgroundcolor="#1995c9">
+        Consulta nuestra
+        <br />
+        lista de servicios
       </TextBlock>
-      <ExternalLink target="_blank" href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login" backgroundcolor="#2c4486">
-        Consulta de<br/>resultados
+      <ExternalLink
+        target="_blank"
+        href="http://pasteurlab.fortiddns.com:38080/EclipseWebStandard/login"
+        backgroundcolor="#2c4486"
+      >
+        Consulta de
+        <br />
+        resultados
       </ExternalLink>
     </Compromise>
     <Healthcare>
       <SectionHeader>siempre juntos, cuidándonos</SectionHeader>
-      <SectionSubheader>Nuestro filosofía de trabajo es mantenernos en constante cambio, adaptando nuestros servicios al estilo de vida de nuestros diferentes pacientes.</SectionSubheader>
+      <SectionSubheader>
+        Nuestro filosofía de trabajo es mantenernos en constante cambio,
+        adaptando nuestros servicios al estilo de vida de nuestros diferentes
+        pacientes.
+      </SectionSubheader>
       <ValueProposition>
         <ValueCard>
           <ValuCardIconContainer>
-            <ValueCardImage src={urgencia}/>
+            <ValueCardImage src={urgencia} />
           </ValuCardIconContainer>
-          <ValueCardSupportText>Servicio<br />de urgencia</ValueCardSupportText>
+          <ValueCardSupportText>
+            Servicio
+            <br />
+            de urgencia
+          </ValueCardSupportText>
         </ValueCard>
         <ValueCard>
-          <ValueCardIcon src={ubicacionSVG}/>
-          <ValueCardSupportText>Siempre<br/>cerca de ti</ValueCardSupportText>
+          <ValueCardIcon src={ubicacionSVG} />
+          <ValueCardSupportText>
+            Siempre
+            <br />
+            cerca de ti
+          </ValueCardSupportText>
         </ValueCard>
         <ValueCard>
           <ValuCardIconContainer>
-            <ValueCardImage src={domicilioIcon}/>
+            <ValueCardImage src={domicilioIcon} />
           </ValuCardIconContainer>
-          <ValueCardSupportText>Servicio<br/>a domicilio</ValueCardSupportText>
+          <ValueCardSupportText>
+            Servicio
+            <br />a domicilio
+          </ValueCardSupportText>
         </ValueCard>
       </ValueProposition>
     </Healthcare>

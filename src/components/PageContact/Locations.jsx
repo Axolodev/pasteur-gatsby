@@ -56,7 +56,7 @@ const Sucursal = styled.div`
   flex: 1;
 `;
 
-const Locations = ({locations}) => {
+const Locations = ({ locations }) => {
   return (
     <Layout>
       <Title> Sucursales </Title>
@@ -70,6 +70,6 @@ const Locations = ({locations}) => {
       </Container>
     </Layout>
   );
-}
+};
 
 export default Locations;

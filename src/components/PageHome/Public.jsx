@@ -74,7 +74,7 @@ const GridItem = styled.div`
   position: relative;
   outline-style: solid;
   outline-color: ${props => props.theme.color.white};
-  outline-width: 1px; 
+  outline-width: 1px;
   padding: 1em 0;
 `;
 
@@ -97,7 +97,7 @@ const GridItemTitle = styled.div`
 
 const GridItemDescription = styled.div`
   font-style: italic;
-  font-family: "Times New Roman";
+  font-family: 'Times New Roman';
   font-size: 1em;
   line-height: 1.3em;
   width: 80%;
@@ -119,44 +119,59 @@ const Img = styled.img`
   width: 70%;
 `;
 
-const profiles = [{
-  name: 'general',
-  alt: 'perfil general',
-  description: 'Nuestro objetivo es facilitar nuestros servicios a todos los integrantes de la familia, liberándote de preocupaciones y brindando tranquilidad accesible a todos. Calidad de vida con la tranquilidad de que estamos cerca de ti.',
-  img: general
-}, {
-  name: 'mujer',
-  alt: 'perfil mujer',
-  description: 'Día con día estamos consientes de la importancia del rola de la mujer en las familias de todos nuestros pacientes. Buscamos siempre crear  un servicio que faciliten su acelerada rutina.',
-  img: mujer
-}, {
-  name: 'hombre',
-  alt: 'perfil hombre',
-  description: 'El hombre de familia esta en constante preocupación por el trabajo y los integrantes de su hogar, por lo que nos enfocamos en crear servicios que faciliten su rutina, y brindar la tranquilidad a su familia del cuidado de su salud.',
-  img: hombre
-}, {
-  name: 'adultomayor',
-  alt: 'perfil adulto mayor',
-  description: 'Nuestro objetivo es facilitar nuestros servicios a todos los integrantes de la familia, liberándote de preocupaciones y brindando tranquilidad accesible a todos. Calidad de vida con la tranquilidad de que estamos cerca de ti.',
-  img: adultomayor
-}, {
-  name: 'deportista',
-  alt: 'perfil deportista',
-  description: 'Sabemos que el deporte es un privilegio que se disfruta con el cuidado y la prevención de la salud. Nosotros creamos servicios para aquellos que se retan todos los días, se ponen nuevas metas deportivas y dentro de su rutina se encuentra el hábito de la revisión constante.',
-  img: deportista
-}, {
-  name: 'corporativo',
-  alt: 'perfil corporativo',
-  description: 'El capital humano es el recurso más valioso dentro de las organizaciones, por este motivo, creamos servicios y programas que te permitirán estar tranquilo sobre la salud de cada integrante de tu equipo de trabajo.',
-  img: organizacion
-}]
+const profiles = [
+  {
+    name: 'general',
+    alt: 'perfil general',
+    description:
+      'Nuestro objetivo es facilitar nuestros servicios a todos los integrantes de la familia, liberándote de preocupaciones y brindando tranquilidad accesible a todos. Calidad de vida con la tranquilidad de que estamos cerca de ti.',
+    img: general,
+  },
+  {
+    name: 'mujer',
+    alt: 'perfil mujer',
+    description:
+      'Día con día estamos consientes de la importancia del rola de la mujer en las familias de todos nuestros pacientes. Buscamos siempre crear  un servicio que faciliten su acelerada rutina.',
+    img: mujer,
+  },
+  {
+    name: 'hombre',
+    alt: 'perfil hombre',
+    description:
+      'El hombre de familia esta en constante preocupación por el trabajo y los integrantes de su hogar, por lo que nos enfocamos en crear servicios que faciliten su rutina, y brindar la tranquilidad a su familia del cuidado de su salud.',
+    img: hombre,
+  },
+  {
+    name: 'adultomayor',
+    alt: 'perfil adulto mayor',
+    description:
+      'Nuestro objetivo es facilitar nuestros servicios a todos los integrantes de la familia, liberándote de preocupaciones y brindando tranquilidad accesible a todos. Calidad de vida con la tranquilidad de que estamos cerca de ti.',
+    img: adultomayor,
+  },
+  {
+    name: 'deportista',
+    alt: 'perfil deportista',
+    description:
+      'Sabemos que el deporte es un privilegio que se disfruta con el cuidado y la prevención de la salud. Nosotros creamos servicios para aquellos que se retan todos los días, se ponen nuevas metas deportivas y dentro de su rutina se encuentra el hábito de la revisión constante.',
+    img: deportista,
+  },
+  {
+    name: 'corporativo',
+    alt: 'perfil corporativo',
+    description:
+      'El capital humano es el recurso más valioso dentro de las organizaciones, por este motivo, creamos servicios y programas que te permitirán estar tranquilo sobre la salud de cada integrante de tu equipo de trabajo.',
+    img: organizacion,
+  },
+];
 
 const Public = () => (
   <Section>
     <Layout>
       {profiles.map(profile => (
         <GridItem key={profile.name}>
-          <GridItemLogo><Img src={profile.img} alt={profile.alt}/></GridItemLogo>
+          <GridItemLogo>
+            <Img src={profile.img} alt={profile.alt} />
+          </GridItemLogo>
           <GridItemTitle>{profile.name}</GridItemTitle>
           <GridItemDescription>{profile.description}</GridItemDescription>
         </GridItem>

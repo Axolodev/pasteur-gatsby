@@ -1,4 +1,4 @@
-export const globalTheme = {
+const theme = {
   color: {
     black: '#333',
     lightBlue: '#1995c9',
@@ -7,6 +7,8 @@ export const globalTheme = {
     greyBlue: '#8b98bd',
   },
   fontFamily: {
-    main: 'akzidenzGrotesk'
+    main: 'akzidenzGrotesk',
   },
 };
+
+export default theme;
