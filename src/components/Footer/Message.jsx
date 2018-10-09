@@ -46,8 +46,8 @@ const FormStatusList = {
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 }
 
 class Message extends React.Component {
@@ -58,8 +58,8 @@ class Message extends React.Component {
     email: '',
     mensaje: '',
   };
-  
-  handleChange = (event) => {
+
+  handleChange = event => {
     const { target } = event;
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -70,19 +70,19 @@ class Message extends React.Component {
     event.preventDefault();
     const form = event.target;
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state
-      })
+        'form-name': form.getAttribute('name'),
+        ...this.state,
+      }),
     })
       .then(() => {
-        alert("¡Muchas gracias! Tu mensaje ha sido enviado.");
+        alert('¡Muchas gracias! Tu mensaje ha sido enviado.');
       })
       .catch(error => alert(error));
-  }
+  };
 
   render() {
     return (

@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  branch: dev
 
 media_folder: static/assets/uploads
 public_folder: /assets/uploads
@@ -14,6 +15,7 @@ collections:
       - { name: type, label: 'Hidden Type', widget: hidden, default: "slide" }
       - { name: path, label: "Ruta" }
       - { name: img, label: 'Imagen', widget: image }
+  
   - name: sucursal
     label: "Sucursal"
     folder: content/sucursales
@@ -31,6 +33,24 @@ collections:
         fields: 
             - { name: latitude, label: "Latitud", required: true, pattern: "^-?[0-9]*(.?[0-9]+)?$" }
             - { name: longitude, label: "Longitud", required: true, pattern: "^-?[0-9]*(.?[0-9]+)?$" }
+          
+  - name: proximaApertura
+    label: "Próxima apertura"
+    folder: content/proxima
+    create: true
+    fields:
+      - { name: title, label: "Nombre", required: true }
+      - { name: address, label: "Dirección", widget: text, required: false }
+      - { name: type, label: 'Hidden Type', widget: hidden, default: "aperturas" }
+      - { name: main, label: "Matriz", widget: boolean, required: false }
+      - name: "coords"
+        label: "Coordenadas"
+        widget: "object"
+        required: true
+        fields:
+            - { name: latitude, label: "Latitud", required: true, pattern: "^-?[0-9]*(.?[0-9]+)?$" }
+            - { name: longitude, label: "Longitud", required: true, pattern: "^-?[0-9]*(.?[0-9]+)?$" }
+
   - name: news
     label: Noticias
     folder: content/noticias

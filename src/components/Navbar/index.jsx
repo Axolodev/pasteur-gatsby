@@ -9,12 +9,12 @@ import Navigation from './Navigation';
 const NavLayout = styled.nav`
   z-index: 1;
   display: grid;
-  grid-template: repeat(4, minmax(2.5vh, 47px)) / 3fr 3fr;
+  grid-template: repeat(4, minmax(2.5vh, 47px)) / repeat(3, 1fr);
   grid-template-areas:
-    'contact contact'
-    'logo nav'
-    'logo nav'
-    '. .';
+    'contact contact contact'
+    'logo nav nav'
+    'logo nav nav'
+    '. . .';
   align-items: center;
   justify-content: space-evenly;
   font-family: ${props => props.theme.fontFamily.main};
@@ -28,7 +28,7 @@ const NavLayout = styled.nav`
   );
 
   ${device.laptop} {
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 2fr 2fr;
   }
 
   ${device.tablet} {
@@ -125,11 +125,13 @@ const LogoSection = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding-left: 2em;
+  padding-right: 1em;
   color: white;
   flex: 1;
 
   ${device.laptop} {
     padding-left: 1em;
+    padding-right: 0.5em;
   }
 
   ${device.mobile} {
