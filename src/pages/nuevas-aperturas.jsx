@@ -32,16 +32,6 @@ const SucursalesContainer = styled(Locations)`
 `;
 
 const NewLocations = ({ data }) => {
-  debugger;
-  const allLocationsData = data.allNewLocations.edges.map(
-    ({ node: { frontmatter } }) => ({ ...frontmatter })
-  );
-
-  const locationCoords = allLocationsData.map(({ coords }, index) => ({
-    id: index,
-    latitude: parseFloat(coords.latitude),
-    longitude: parseFloat(coords.longitude),
-  }));
 
   return (
     <AppLayout>
