@@ -25,7 +25,7 @@ const text = 'Siempre cerca, siempre accesibles';
 
 const CustomH1 = withLayoutPadding(H1);
 
-const Content = withLayoutPadding(styled(ReactMarkdown)`
+const Content = styled(ReactMarkdown)`
   width: 100%;
   color: #333;
   font-family: ${props => props.theme.fontFamily.main};
@@ -35,15 +35,15 @@ const Content = withLayoutPadding(styled(ReactMarkdown)`
     margin: 1em 0;
     line-height: 1.5em;
   }
-`);
+`;
 
 const PageAbout = () => (
   <AppLayout>
-    <Layout fluid>
-      <CustomH1>Sobre Nosotros</CustomH1>
+    <Layout>
+      <H1>Sobre Nosotros</H1>
       <Content source={input} />
-      <ButtonQuote background={`url(${quoteBackground}) center`} quote={text} />
     </Layout>
+    <ButtonQuote background={`url(${quoteBackground}) center`} quote={text} />
   </AppLayout>
 );
 

@@ -27,6 +27,13 @@ module.exports = {
         path: `${__dirname}/content/noticias`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `proxima`,
+        path: `${__dirname}/content/proxima`,
+      },
+    },
     'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-google-tagmanager`,

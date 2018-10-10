@@ -23,16 +23,26 @@ const FieldName = styled.span`
   font-size: 0.75em;
 `;
 
-const Text = styled.textarea`
-  height: 2.2em;
-  margin: 0 0 1em 0;
-  resize: none;
+const Input = styled.input`
+  height: 1.5em;
   background-color: ${props => props.theme.color.greyBlue};
-  height: ${props => (props.msg ? '4em' : '1.5em')};
-  resize: none;
+  margin-bottom: 1em;
   font-family: ${props => props.theme.fontFamily.main};
-  font-size: 0.75em;
   color: ${props => props.theme.color.white};
+  font-size: 0.75em;
+  ${({disabled}) => disabled && 'opacity: 0.5;'}  
+  outline: none;
+  border: 1px solid transparent;
+  padding: 0.3em;
+  resize: none;
+
+  :focus {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+`;
+
+const Textarea = styled(Input.withComponent('textarea'))`
+  height: 4em;
 `;
 
 const Submit = styled.input``;
@@ -68,20 +78,48 @@ class Message extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const form = event.target;
+    this.setState({
+      formStatus: FormStatusList.sending,
+    });
+  };
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...this.state,
-      }),
-    })
-      .then(() => {
-        alert('¡Muchas gracias! Tu mensaje ha sido enviado.');
+  componentDidUpdate() {
+    if (this.state.formStatus === FormStatusList.sending) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contacto',
+          ...this.state,
+        }),
       })
-      .catch(error => alert(error));
+        .then(() => {
+          this.setState({
+            formStatus: FormStatusList.sent,
+          });
+        })
+        .catch(error => {
+          this.formError = error;
+          this.setState({
+            formStatus: FormStatusList.error,
+          });
+        });
+    }
+
+    if (this.state.formStatus === FormStatusList.sent) {
+      alert('¡Muchas gracias! Tu mensaje ha sido enviado.');
+    }
+
+    if (this.state.formStatus === FormStatusList.error) {
+      alert(this.formError);
+    }
+  }
+
+  getIsFormDisabled = () => {
+    return (
+      this.state.formStatus === FormStatusList.sent ||
+      this.state.formStatus === FormStatusList.sending
+    );
   };
 
   render() {
@@ -104,21 +142,48 @@ class Message extends React.Component {
           </p>
           <FieldLabel>
             <FieldName>Nombre</FieldName>
-            <Text name="nombre" onChange={this.handleChange} />
+            <Input
+              disabled={this.getIsFormDisabled()}
+              name="nombre"
+              autocomplete="name"
+              onChange={this.handleChange}
+              required
+            />
           </FieldLabel>
           <FieldLabel>
             <FieldName>Teléfono</FieldName>
-            <Text name="telefono" onChange={this.handleChange} />
+            <Input
+              disabled={this.getIsFormDisabled()}
+              name="telefono"
+              autocomplete="tel-national"
+              onChange={this.handleChange}
+            />
           </FieldLabel>
           <FieldLabel data-optional>
             <FieldName>Email</FieldName>
-            <Text name="email" onChange={this.handleChange} />
+            <Input
+              disabled={this.getIsFormDisabled()}
+              name="email"
+              autocomplete="email"
+              type="email"
+              onChange={this.handleChange}
+            />
           </FieldLabel>
           <FieldLabel>
             <FieldName>Mensaje</FieldName>
-            <Text name="mensaje" onChange={this.handleChange} msg />
+            <Textarea
+              disabled={this.getIsFormDisabled()}
+              name="mensaje"
+              onChange={this.handleChange}
+              msg
+              required
+            />
           </FieldLabel>
-          <Submit type="submit" value="Enviar" />
+          <Submit
+            type="submit"
+            value="Enviar"
+            disabled={this.getIsFormDisabled()}
+          />
         </Form>
       </React.Fragment>
     );

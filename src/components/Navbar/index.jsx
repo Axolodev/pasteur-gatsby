@@ -7,7 +7,7 @@ import { device } from '../../utilities/device';
 import Navigation from './Navigation';
 
 const NavLayout = styled.nav`
-  z-index: 1;
+  z-index: 100;
   display: grid;
   grid-template: repeat(4, minmax(2.5vh, 47px)) / repeat(3, 1fr);
   grid-template-areas:
@@ -33,6 +33,7 @@ const NavLayout = styled.nav`
 
   ${device.tablet} {
     grid-template-rows: minmax(5vh, 6em);
+    grid-template-columns: 1fr 2fr;    
     grid-template-areas: 'logo nav';
   }
 `;
@@ -153,6 +154,10 @@ const Img = styled.img`
   min-height: 5rem;
 
   ${device.laptop} {
+    width: 13em;
+  }
+
+  ${device.tablet} {
     width: 15em;
   }
 

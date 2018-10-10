@@ -18,7 +18,6 @@ const PageHeader = H1.extend`
 
 const TableLayout = styled.div`
   min-height: 500px;
-  height: 60vh;
   border: #f0f0f0 solid 2px;
 `;
 

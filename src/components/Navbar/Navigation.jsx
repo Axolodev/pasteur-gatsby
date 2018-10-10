@@ -204,6 +204,7 @@ class Navigation extends Component {
           >
             Consulta de resultados
           </Anchor>
+          <Link to="/nuevas-aperturas">Nuevas aperturas</Link>
           <Link to="/sucursales">Sucursales</Link>
         </LinksSection>
       </NavSection>

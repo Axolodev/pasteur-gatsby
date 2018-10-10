@@ -1,5 +1,9 @@
 import React from 'react';
+import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import ButtonQuote from '../components/ButtonQuote';
 import Public from '../components/PageHome/Public';
@@ -7,7 +11,7 @@ import Intro from './../components/PageHome/Intro';
 import Slideshow from './../components/Slideshow';
 import quoteBackground from '../components/PageHome/assets/quote-bg.jpg';
 import AppLayout from './../components/AppLayout/index';
-import { graphql } from 'gatsby';
+
 
 const text = 'Comprometidos por el bienestar de tu familia.';
 
@@ -19,8 +23,6 @@ const Layout = styled.div`
 const SlideshowLayout = styled.div`
   background: black;
   width: 100%;
-  height: 100vh;
-  min-height: 40rem;
   position: relative;
 `;
 
@@ -38,24 +40,24 @@ const BgSlide = styled.div.attrs({
 `;
 
 const PageHome = ({ data }) => {
-  const slides = data.slides.edges.map(({ node }) => {
-    const {
-      frontmatter: { img, title },
-    } = node;
-
-    return {
-      key: title,
-      background: `url('${img}') center`,
-    };
-  });
+  const slides = data.slides.edges.map(({node: {frontmatter}}) => ({
+    original: frontmatter.img
+  }));
 
   return (
     <AppLayout>
       <Layout>
         <SlideshowLayout>
-          <Slideshow
+          <ImageGallery
             items={slides}
-            defaultElementRender={data => <BgSlide {...data} />}
+            showThumbnails={false}
+            showFullscreenButton={false}
+            showPlayButton={false}
+            slideDuration={600}
+            slideInterval={4000}
+            showBullets
+            autoPlay
+            lazyLoad
           />
         </SlideshowLayout>
         <Intro />

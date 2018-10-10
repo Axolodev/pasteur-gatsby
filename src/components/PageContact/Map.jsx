@@ -20,7 +20,7 @@ class Map extends Component {
       withGoogleMap(() => (
         <GoogleMap
           defaultZoom={11}
-          defaultCenter={{ lat: 25.645376, lng: -100.191684 }}
+          defaultCenter={{ lat: 25.682855, lng: -100.318612 }}
         >
           {this.props.locations.map((sucursal, index) => (
             <Marker

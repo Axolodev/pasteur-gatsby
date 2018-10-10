@@ -56,10 +56,10 @@ const Sucursal = styled.div`
   flex: 1;
 `;
 
-const Locations = ({ locations }) => {
+const Locations = ({ locations, title }) => {
   return (
     <Layout>
-      <Title> Sucursales </Title>
+      <Title> {title || 'Sucursales'} </Title>
       <Container>
         {locations.map((sucursal, index) => (
           <Sucursal key={index}>
