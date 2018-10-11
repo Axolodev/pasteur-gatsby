@@ -30,8 +30,7 @@ const Input = styled.input`
   font-family: ${props => props.theme.fontFamily.main};
   color: ${props => props.theme.color.white};
   font-size: 0.75em;
-  ${({disabled}) => disabled && 'opacity: 0.5;'}  
-  outline: none;
+  ${({ disabled }) => disabled && 'opacity: 0.5;'} outline: none;
   border: 1px solid transparent;
   padding: 0.3em;
   resize: none;

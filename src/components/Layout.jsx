@@ -20,7 +20,9 @@ const Layout = withLayoutPadding('main').extend`
   flex-direction: column;
   
   ${device.tablet} {
-    ${({fluid}) => fluid && `
+    ${({ fluid }) =>
+      fluid &&
+      `
       padding-left: 0;
       padding-right: 0;
     `}
@@ -29,7 +31,9 @@ const Layout = withLayoutPadding('main').extend`
   }
 
   ${device.mobile} {
-    ${({fluid}) => fluid && `
+    ${({ fluid }) =>
+      fluid &&
+      `
       padding-left: 0;
       padding-right: 0;
     `}

@@ -3,7 +3,7 @@ import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
-import "react-image-gallery/styles/css/image-gallery.css";
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 import ButtonQuote from '../components/ButtonQuote';
 import Public from '../components/PageHome/Public';
@@ -11,7 +11,6 @@ import Intro from './../components/PageHome/Intro';
 import Slideshow from './../components/Slideshow';
 import quoteBackground from '../components/PageHome/assets/quote-bg.jpg';
 import AppLayout from './../components/AppLayout/index';
-
 
 const text = 'Comprometidos por el bienestar de tu familia.';
 
@@ -40,8 +39,8 @@ const BgSlide = styled.div.attrs({
 `;
 
 const PageHome = ({ data }) => {
-  const slides = data.slides.edges.map(({node: {frontmatter}}) => ({
-    original: frontmatter.img
+  const slides = data.slides.edges.map(({ node: { frontmatter } }) => ({
+    original: frontmatter.img,
   }));
 
   return (

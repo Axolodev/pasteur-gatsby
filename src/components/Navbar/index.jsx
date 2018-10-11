@@ -33,7 +33,7 @@ const NavLayout = styled.nav`
 
   ${device.tablet} {
     grid-template-rows: minmax(5vh, 6em);
-    grid-template-columns: 1fr 2fr;    
+    grid-template-columns: 1fr 2fr;
     grid-template-areas: 'logo nav';
   }
 `;
