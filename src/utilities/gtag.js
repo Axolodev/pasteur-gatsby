@@ -1,5 +1,5 @@
 export function gtag() {
-  if (!window) return;
+  if (typeof window !== undefined || !window) return;
 
   if (!window.dataLayer) {
     window.dataLayer = window.dataLayer || [];
