@@ -23,6 +23,7 @@ const SlideshowLayout = styled.div`
   background: black;
   width: 100%;
   position: relative;
+  height: calc(100vw * 0.5625);
 `;
 
 const Background = styled.div``;
@@ -36,6 +37,11 @@ const BgSlide = styled.div.attrs({
   height: 100%;
   align-items: center;
   justify-content: flex-end;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: calc(100vw * 0.5625);
 `;
 
 const PageHome = ({ data }) => {
@@ -54,6 +60,11 @@ const PageHome = ({ data }) => {
             showPlayButton={false}
             slideDuration={600}
             slideInterval={4000}
+            renderItem={item => (
+              <Image
+                src={item.original}
+              />
+            )}
             showBullets
             autoPlay
             lazyLoad
