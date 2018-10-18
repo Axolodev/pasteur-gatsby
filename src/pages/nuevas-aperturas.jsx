@@ -52,10 +52,15 @@ const Direccion = styled.p`
   font-family: ${({ theme }) => theme.fontFamily.main};
 `;
 
+const NoNewLocations = styled.p`
+  color: #333;
+  font-family: ${({ theme }) => theme.fontFamily.main};
+`;
+
 const NewLocations = ({ data }) => {
-  const allLocationsData = data.allNewLocations.edges.map(
+  const allLocationsData = (data.allNewLocations && data.allNewLocations.edges.map(
     ({ node: { frontmatter } }) => ({ ...frontmatter })
-  );
+  )) || [];
 
   const locationCoords = allLocationsData.map(({ coords }, index) => ({
     id: index,
@@ -69,12 +74,14 @@ const NewLocations = ({ data }) => {
         <H1>Próximas aperturas</H1>
         <Layout>
           <LocationsContainer>
-            {allLocationsData.map(location => (
+            {allLocationsData.length > 0 ? allLocationsData.map(location => (
               <Sucursal key={location.title}>
                 <SucursalName> {location.title} </SucursalName>
                 <Direccion> {location.address} </Direccion>
               </Sucursal>
-            ))}
+            )) : (
+              <NoNewLocations>No hay nuevas localizaciones planeadas</NoNewLocations>
+            )}
           </LocationsContainer>
           <MapaCont locations={locationCoords} />
         </Layout>
