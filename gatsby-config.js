@@ -33,13 +33,22 @@ module.exports = {
         name: `proxima`,
         path: `${__dirname}/content/proxima`,
       },
+      
     },
     'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: "UA-125738292-1",
+        id: "GTM-5G9PBLJ",
         includeInDevelopment: false,
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-125738292-1",
+        head: true,
       },
     },
   ]
