@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { gtag } from '../../utilities/gtag';
 
 const Form = styled.form`
   display: flex;
@@ -107,6 +108,7 @@ class Message extends React.Component {
 
     if (this.state.formStatus === FormStatusList.sent) {
       alert('¡Muchas gracias! Tu mensaje ha sido enviado.');
+      gtag('event', 'conversion', {'send_to': 'AW-789445090/mhoqCMmcq4kBEOLzt_gC'});
     }
 
     if (this.state.formStatus === FormStatusList.error) {
