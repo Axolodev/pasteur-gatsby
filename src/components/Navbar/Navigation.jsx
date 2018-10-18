@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _Link from 'gatsby-link';
 import styled from 'styled-components';
 import { device } from '../../utilities/device';
+import { StaticQuery, graphql } from 'gatsby';
 
 const NavSection = styled.div`
   grid-area: nav;
@@ -204,7 +205,25 @@ class Navigation extends Component {
           >
             Consulta de resultados
           </Anchor>
-          <Link to="/nuevas-aperturas">Nuevas aperturas</Link>
+          <StaticQuery
+            query={graphql`{
+              markdownRemark(
+                frontmatter: {type:{eq:"aperturas"}}
+              ) {
+                frontmatter{
+                  type
+                }
+              }
+            }
+            `}
+            render={({ markdownRemark }) => {
+              return markdownRemark ? (
+                <Link to="/nuevas-aperturas">Nuevas aperturas</Link>
+              ) : (
+                ''
+              );
+            }}
+          />
           <Link to="/sucursales">Sucursales</Link>
         </LinksSection>
       </NavSection>
