@@ -39,7 +39,7 @@ class Map extends Component {
     return (
       <Div className={this.props.className}>
         <MyMapComponent
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9GULpt__ZrXICuni67CorQ79P8FbIP3g&v=3.exp&libraries=geometry,drawing,places"
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbFiZ2YU98zmne6GPvT2s6YW6LyChuDio&v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
